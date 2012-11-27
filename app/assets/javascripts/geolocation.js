@@ -1,3 +1,7 @@
+
+// Geolocation object that gets Users current position by
+// longitude & latitude + some additional functions to help with
+// providing data and populating the main page and google map
 var Geolocation = {
   init: function() {
     $('.find-shops').on('click', this.getGeoLocation);
@@ -5,6 +9,7 @@ var Geolocation = {
     this.currentPosition();
   },
 
+// function that creates the map and displays it on our main page
   createMap: function(lngLat) {
     var mapOptions = {
       zoom: 13,
@@ -15,6 +20,8 @@ var Geolocation = {
     return map;
   },
 
+// function that returns and displays a list of our Yelp search query for coffeeshops
+// also populates the google map with pins accordingly
   shopLists: function(event, data) {
     $('#map-something').append("<li> " + data.region.join(" ") + " </li>")
     for (var i = 0; i < data.businesses.length - 1; i++) {
@@ -28,18 +35,22 @@ var Geolocation = {
     }
   },
 
+// function to get the users current position based on geolocation
+// also adds a pin to the google map with a hover text that reads 'You're here
   currentPosition: function()  {
      navigator.geolocation.getCurrentPosition(function(position){
         var myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
         var marker = new google.maps.Marker({
           position: myLatlng,
           map: Geolocation.createMap(myLatlng),
-          title: "You're Here", //name
+          title: "You're here", //name
         });
      });
 
   },
 
+// function that sends an Ajaxs request to our rails sever and waits for a reply
+// on successful reply triggers a 'success' which causes the displaying of our query items
   getGeoLocation: function() {
     navigator.geolocation.getCurrentPosition(function(position){
       $.ajax({
@@ -61,15 +72,11 @@ var Geolocation = {
   }
 };
 
+// document ready wrapper for our Geolocation object
 $(document).ready(function(){
   Geolocation.init();
 });
 
 
-  // $('.add-todo').on('ajax:error', 'form', function(event, data) {
-  //   $('.todo_lists').prepend(data.responseText);
-  // });
-
-  // data.results
 
 
