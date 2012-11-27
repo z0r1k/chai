@@ -1,4 +1,6 @@
 Chai::Application.routes.draw do
+  root :to => "static#index"
+
   resources :visits
 
   resources :shops
