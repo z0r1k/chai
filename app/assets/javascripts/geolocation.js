@@ -19,12 +19,6 @@ var Geolocation = {
         complete: function(xhr, status) {
           $('#map-something').trigger('ajax:complete', [xhr, status]);
         }
-
-        // success: function(data) {
-
-        //   $('body').html(data);
-
-        // }
       });
     });
   }
@@ -33,18 +27,13 @@ var Geolocation = {
 $(document).ready(function(){
   Geolocation.init();
   $('#map-something').on('ajax:success', function(event, data) {
-      // console.log(data.results)
-      //debugger
-
-      // $('#map-something').prepend(data.results);
       function lists(data){
-        for (var i = 0; i < data.results.length - 1; i++) {
-          $('#map-something').append("<li> " + data.results[i].join(" ") + " </li>")
+        // $('#map-something').append("<li> " + data.region.join(" ") + " </li>")
+        for (var i = 0; i < data.businesses.length - 1; i++) {
+          $('#map-something').append("<li> " + data.businesses[i].join(" ") + " </li>")
         }
       };
       lists(data);
-      // debugger
-
   });
 });
 

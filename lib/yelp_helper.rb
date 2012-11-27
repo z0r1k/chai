@@ -34,8 +34,10 @@ module YelpHelper
     location ||= "37.788022,-122.399797"
     # puts businesses.length
     # puts coffeeplaces.sort_by!{|i| i[1]}
+    #{ businesses: get_businesses(location), region: get_region(location) }
     get_businesses(location)
   end
+
 
   def self.get_businesses(location)
     businesses(location).collect do |coffee|
@@ -43,9 +45,24 @@ module YelpHelper
         coffee['name'],
         coffee['distance'],
         coffee['rating'],
+        coffee['review_count'],
+        coffee['location']['coordinate']['latitude'],
+        coffee['location']['coordinate']['longitude'],
       ]
     end
   end
+
+  # def self.get_region(location)
+  #   region(location).collect do |coffee|
+  #     [
+  #       coffee['span']['latitude_delta'],
+  #       # coffee['span']['latitude_delta'],
+  #       # coffee['span']['longitude_delta'],
+  #       # coffee['center']['latitude'],
+  #       # coffee['center']['longitude'],
+  #     ]
+  #   end
+  # end
 
   def self.query(location)
     access_token.get(path(location)).body
@@ -54,6 +71,10 @@ module YelpHelper
   def self.path(location)
     "#{api_search_path}?term=coffee&ll=#{location}"
   end
+
+  # def self.region(location)
+  #   JSON.parse(query(location))["region"] || []
+  # end
 
   def self.businesses(location)
     JSON.parse(query(location))["businesses"] || []

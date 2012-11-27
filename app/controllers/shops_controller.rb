@@ -11,7 +11,11 @@ class ShopsController < ApplicationController
 
 
     @results = YelpHelper.search("#{params[:latitude]},#{params[:longitude]}")
-    render :json => {:results => @results}
+    logger.info "------------------"
+    logger.info @results
+    logger.info "------------------"
+
+    render :json => { :businesses => @results } #:businesses], :region =>  @results[:region] }
 
 
 
