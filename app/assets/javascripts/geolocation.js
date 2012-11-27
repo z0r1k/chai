@@ -1,6 +1,10 @@
 var Geolocation = {
   init: function() {
     $('.find-shops').on('click', this.getGeoLocation);
+
+
+
+
   },
 
   getGeoLocation: function() {
@@ -28,7 +32,7 @@ $(document).ready(function(){
   Geolocation.init();
   $('#map-something').on('ajax:success', function(event, data) {
       function lists(data){
-        // $('#map-something').append("<li> " + data.region.join(" ") + " </li>")
+        $('#map-something').append("<li> " + data.region.join(" ") + " </li>")
         for (var i = 0; i < data.businesses.length - 1; i++) {
           $('#map-something').append("<li> " + data.businesses[i].join(" ") + " </li>")
         }

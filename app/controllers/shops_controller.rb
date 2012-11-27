@@ -15,7 +15,7 @@ class ShopsController < ApplicationController
     logger.info @results
     logger.info "------------------"
 
-    render :json => { :businesses => @results } #:businesses], :region =>  @results[:region] }
+    render :json => { :businesses => @results[:businesses], :region =>  @results[:region] }
 
 
 
