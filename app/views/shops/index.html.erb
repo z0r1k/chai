@@ -10,27 +10,27 @@
 
     <!-- <link href="/app/assets/stylesheets/geolocation.css" rel="stylesheet"> -->
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-    <script type="text/javascript">
-      function initialize() {
-        var myLatlng = new google.maps.LatLng(37.792327444128844,-122.40598430122792);
-        var mapOptions = {
-          zoom: 13,
-          center: myLatlng,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }
-        var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+    // <script type="text/javascript">
+    //   function initialize() {
+    //     var myLatlng = new google.maps.LatLng(37.792327444128844,-122.40598430122792);
+    //     var mapOptions = {
+    //       zoom: 13,
+    //       center: myLatlng,
+    //       mapTypeId: google.maps.MapTypeId.ROADMAP
+    //     }
+    //     var map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map,
-            title: 'Hello World!'
-        });
-      }
-    </script>
+    //     var marker = new google.maps.Marker({
+    //         position: myLatlng,
+    //         map: map,
+    //         title: 'Hello World!'
+    //     });
+    //   }
+    // </script>
   </head>
 
 
-  <body onload="initialize()">
+  <body> <!-- onload="initialize()"> -->
 
     <div id="map_canvas"></div>
 
