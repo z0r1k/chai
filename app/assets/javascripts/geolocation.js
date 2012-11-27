@@ -63,6 +63,7 @@ var Geolocation = {
 
 $(document).ready(function(){
   Geolocation.init();
+
 });
 
 
