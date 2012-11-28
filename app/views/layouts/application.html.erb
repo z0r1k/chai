@@ -9,18 +9,25 @@
   </head>
 
   <body>
-    <div id="logo"><%= image_tag "chai_2.gif" %></div>
-    <div id="signin">
-      <% if user_signed_in? %>
-        <li><%= link_to current_user.email %></li>
-        <%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %>
-      <% else %>
-        <%= link_to "Sign in", new_user_session_path %>
-      <% end %>
-        <div id="signup">
-        <%= button_to "Sign up", new_user_registration_path %>
-        </div>
+    <div id="header_box">
+      <div id="logo"><%= image_tag "chai_3.gif" %></div>
+      <div id="header_action_box">
+        <ul>
+          <% if user_signed_in? %>
+            <li><%= link_to current_user.email %></li>
+            <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %></li>
+          <% else %>
+            <li><%= link_to "Sign in", new_user_session_path %></li>
+          <% end %>
+          <li><%= button_to "Sign up!", new_user_registration_path %></li>
+        </ul>
+      </div>
+    </div>
 
+    <div id="banner_box">
+      <span>Find a nice place to work.</span>
+      <span><%= button_to "Sign up!", new_user_registration_path %></span>
+    </div>
 
     </div>
 
