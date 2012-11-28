@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(:version => 20121127233822) do
 
   create_table "shops", :force => true do |t|
     t.string   "name"
-    t.string   "latitude"
-    t.string   "longitude"
+    t.decimal  "latitude"
+    t.decimal  "longitude"
     t.decimal  "rating"
     t.string   "yelp_url"
     t.string   "img_url"

@@ -19,12 +19,12 @@ class ShopsController < ApplicationController
 
     @results[:businesses].each  do |shop|
       @shop = Shop.new
-      @shop.name = shop[0]
-      @shop.latitude = shop[6]
-      @shop.longitude = shop[7]
-      @shop.rating = shop[2]
-      @shop.yelp_url = shop[5]
-      @shop.img_url = shop[4]
+      @shop.name = shop[:name]
+      @shop.latitude = shop[:latitude]
+      @shop.longitude = shop[:longitude]
+      @shop.rating = shop[:rating]
+      @shop.yelp_url = shop[:yelp_url]
+      @shop.img_url = shop[:img_url]
       @shop.save
     end
 

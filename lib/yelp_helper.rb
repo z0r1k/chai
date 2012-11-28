@@ -51,16 +51,16 @@ module YelpHelper
 
   def self.get_businesses(location)
     businesses(location).collect do |coffee|
-      [
-        coffee['name'],
-        coffee['distance'],
-        coffee['rating'],
-        coffee['review_count'],
-        coffee['image_url'],
-        coffee['url'],
-        coffee['location']['coordinate']['latitude'],
-        coffee['location']['coordinate']['longitude'],
-      ]
+      {
+        name: coffee['name'],
+        distance: coffee['distance'],
+        rating: coffee['rating'],
+        review_count: coffee['review_count'],
+        image_url: coffee['image_url'],
+        url: coffee['url'],
+        latitude: coffee['location']['coordinate']['latitude'],
+        longitude: coffee['location']['coordinate']['longitude'],
+      }
     end
   end
 
@@ -68,12 +68,12 @@ module YelpHelper
 # and packaging that in an array
   def self.get_region(location)
     info = region(location)
-      [
-        info['span']['latitude_delta'],
-        info['span']['longitude_delta'],
-        info['center']['latitude'],
-        info['center']['longitude'],
-      ]
+      {
+        latitude_delta: info['span']['latitude_delta'],
+        longitude_delta: info['span']['longitude_delta'],
+        latitude: info['center']['latitude'],
+        longitude: info['center']['longitude'],
+      }
   end
 
   def self.query(location)

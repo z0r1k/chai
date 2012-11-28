@@ -23,14 +23,15 @@ var Geolocation = {
 // function that returns and displays a list of our Yelp search query for coffeeshops
 // also populates the google map with pins accordingly
   shopLists: function(event, data) {
-    $('#map-something').append("<li> " + data.region.join(" ") + " </li>")
+    //$('#map-something').append("<li> " + data.region.join(" ") + " </li>")
+    // debugger
     for (var i = 0; i < data.businesses.length - 1; i++) {
-      $('#map-something').append("<li> " + data.businesses[i].join(" ") + " </li>");
-      var myLatlng = new google.maps.LatLng(data.businesses[i][6],data.businesses[i][7]);
+      $('#map-something').append("<li> " + data.businesses[i].name + " </li>");
+      var myLatlng = new google.maps.LatLng(data.businesses[i].latitude, data.businesses[i].longitude);
       var marker = new google.maps.Marker({
       position: myLatlng,
       map: map,
-      title: data.businesses[i][0], //name
+      title: data.businesses[i].name,
     });
     }
   },
