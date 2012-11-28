@@ -20,6 +20,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+
 group :development, :production do
   gem 'jquery-rails'
   gem 'twitter-bootstrap-rails'
@@ -28,6 +29,10 @@ group :development, :production do
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 
 end
+
+gem 'jquery-rails'
+gem 'oauth'
+
 
 
 # To use ActiveModel has_secure_password
