@@ -26,7 +26,7 @@ var Geolocation = {
     $('#map-something').append("<li> " + data.region.join(" ") + " </li>")
     for (var i = 0; i < data.businesses.length - 1; i++) {
       $('#map-something').append("<li> " + data.businesses[i].join(" ") + " </li>");
-      var myLatlng = new google.maps.LatLng(data.businesses[i][4],data.businesses[i][5]);
+      var myLatlng = new google.maps.LatLng(data.businesses[i][6],data.businesses[i][7]);
       var marker = new google.maps.Marker({
       position: myLatlng,
       map: map,
