@@ -17,6 +17,18 @@ class ShopsController < ApplicationController
     logger.info @results
     logger.info "------------------"
 
+    @results[:businesses].each  do |shop|
+      @shop = Shop.new
+      @shop.name = shop[0]
+      @shop.latitude = shop[6]
+      @shop.longitude = shop[7]
+      @shop.rating = shop[2]
+      @shop.yelp_url = shop[5]
+      @shop.img_url = shop[4]
+      @shop.save
+    end
+
+
     render :json => { :businesses => @results[:businesses], :region =>  @results[:region] }
 
 

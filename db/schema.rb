@@ -11,10 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20121127233822) do
 
   create_table "shops", :force => true do |t|
+    t.string   "name"
+    t.string   "latitude"
+    t.string   "longitude"
+    t.decimal  "rating"
+    t.string   "yelp_url"
+    t.string   "img_url"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -38,6 +43,11 @@ ActiveRecord::Schema.define(:version => 20121127233822) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
   create_table "visits", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "shop_id"
+    t.integer  "wifi"
+    t.integer  "power"
+    t.integer  "atmosphere"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

@@ -56,6 +56,8 @@ module YelpHelper
         coffee['distance'],
         coffee['rating'],
         coffee['review_count'],
+        coffee['image_url'],
+        coffee['url'],
         coffee['location']['coordinate']['latitude'],
         coffee['location']['coordinate']['longitude'],
       ]
