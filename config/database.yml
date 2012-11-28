@@ -26,16 +26,14 @@
 
 development:
   adapter: postgresql
-  encoding: unicode
+  encoding: utf8
   database: chai_development
-  pool: 5
+  host: localhost
   # username: admin
   # password: mvclover
 
 test:
   adapter: postgresql
-  encoding: unicode
+  encoding: utf8
   database: chai_test
-  pool: 5
-  # username: admin
-  # password: mvclover
+  host: localhost
