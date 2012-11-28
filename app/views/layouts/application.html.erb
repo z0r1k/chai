@@ -10,18 +10,31 @@
 
   <body>
     <div id="logo"><%= image_tag "chai_2.gif" %></div>
-    <% if user_signed_in? %>
-      <li><%= link_to current_user.email %></li>
-      <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %></li>
-    <% else %>
-      <li><%= link_to "Sign in", new_user_session_path %></li>
-      <li><%= link_to "Sign up", new_user_registration_path %></li>
-    <% end %>
+    <div id="signin">
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.email %></li>
+        <%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path %>
+      <% end %>
+        <div id="signup">
+        <%= button_to "Sign up", new_user_registration_path %>
+        </div>
+
+
+    </div>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
     <%= yield %>
+
+    <nav>
+      <a href="public/home.html.erb/">Home</a> |
+      <a href="public/about.html.erb/">About</a> |
+      <a href="public/faq.html.erb/">FAQ</a> |
+      <a href="public/contact.html.erb/">Contact</a>
+    </nav>
 
   </body>
 </html>
