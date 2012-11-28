@@ -23,7 +23,6 @@ end
 
 group :development, :production do
   gem 'jquery-rails'
-  gem 'twitter-bootstrap-rails'
   gem 'gmaps4rails'
   gem "therubyracer"
   gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
@@ -32,6 +31,9 @@ end
 
 gem 'jquery-rails'
 gem 'oauth'
+gem 'twitter-bootstrap-rails'
+gem "therubyracer"
+gem "less-rails"
 
 
 

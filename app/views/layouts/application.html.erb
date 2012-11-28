@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Chai</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= stylesheet_link_tag 'gmaps4rails' %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-   <% if user_signed_in? %>
-      <li><%= link_to current_user.email %></li>
-      <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %></li>
-    <% else %>
-      <li><%= link_to "Sign in", new_user_session_path %></li>
-      <li><%= link_to "Sign up", new_user_registration_path %></li>
-    <% end %>
+  <head>
+    <title>Chai</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div id="logo"><%= image_tag "chai_2.gif" %></div>
+    <div id="signin">
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.email %></li>
+        <%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path %>
+      <% end %>
+        <div id="signup">
+        <%= button_to "Sign up", new_user_registration_path %>
+        </div>
 
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<%= yield %>
-<%= yield :scripts %>
+    </div>
 
-</body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+
+    <%= yield %>
+
+    <nav>
+      <a href="public/home.html.erb/">Home</a> |
+      <a href="public/about.html.erb/">About</a> |
+      <a href="public/faq.html.erb/">FAQ</a> |
+      <a href="public/contact.html.erb/">Contact</a>
+    </nav>
+
+  </body>
 </html>
