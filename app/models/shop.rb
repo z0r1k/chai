@@ -7,5 +7,6 @@ class Shop < ActiveRecord::Base
     name, long, lat = params.delete(:name), params.delete(:latitude), params.delete(:longitude)
     shop = self.find_or_create_by_name_and_latitude_and_longitude name, long, lat
     shop.update_attributes(params)
+    shop
   end
 end

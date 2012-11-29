@@ -63,19 +63,6 @@
         <span><%= button_to "Sign up!", new_user_registration_path %></span>
       </div>
 
-      <div id="map_canvas"></div>
-
-         <!-- <a href="#" class="find-shops">find coffee shop</a> -->
-
-         <div class="find-button"><button type="button" name="" value="" style="font-size: 32px;" class="btn-block">Find a nice coffee shop</button></div>
-
-         <ul id="map-something">
-           <!--   <li>lalala</li> -->
-         </ul>
-
-    <!-- <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> -->
-
     <%= yield %>
 
     <nav>
@@ -85,28 +72,12 @@
       <a href="public/contact.html.erb/">Contact</a>
     </nav>
 
-
-
-    <!--     <div class="container">
-            <div class="row">
-              <div class="span9">
-                 <%= yield %>
-              </div>
-            </div><!--/row--> -->
-
-
-
-
-
       <footer>
         <p>&copy; Chai 2012</p>
       </footer>
 
     </div> <!-- /container -->
 
-    <!-- Javascripts
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
     <%= javascript_include_tag "application" %>
 
     </div>
