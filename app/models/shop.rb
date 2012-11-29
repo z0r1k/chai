@@ -1,7 +1,16 @@
 class Shop < ActiveRecord::Base
   attr_accessible :name, :latitude, :longitude, :rating, :yelp_url, :img_url
   has_many :visits
-  validates :name, :uniqueness => { :scope => [:latitude , :longitude] }
+  #validates :name, :uniqueness => { :scope => [:latitude , :longitude] }
+
+  def calculate_chai_score
+    visits.average("wifi+power+atmosphere").to_f/3
+  end
+
+  def calculate_and_save_chai_score
+    self.chai_score = calculate_chai_score
+    self.save
+  end
 
   def self.update_or_create_by_name_and_latitude_and_longitude(params)
     name, long, lat = params.delete(:name), params.delete(:latitude), params.delete(:longitude)
