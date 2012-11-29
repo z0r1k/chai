@@ -17,7 +17,13 @@ class ShopsController < ApplicationController
       Shop.update_or_create_by_name_and_latitude_and_longitude(shop.except(:distance, :review_count))
       @shops << Shop.update_or_create_by_name_and_latitude_and_longitude(shop.except(:distance, :review_count))
     end
-    @shops.sort_by! { |shop| -1 * shop.chai_score }
+    
+    @shops.map do |shop|
+      shop.chai_score = 0 if shop.chai_score.nil?
+    end
+    
+    @shops.sort_by! {|shop| -1 * shop.chai_score }
+
 
     render :json => { :html_content => render_to_string('show', :layout => false), :businesses => @results[:businesses], :region =>  @results[:region] }
   end

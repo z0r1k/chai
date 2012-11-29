@@ -16,6 +16,12 @@ module YelpHelper
   TOKEN = 'mtAJKfk5KNHQ1HHfvhFq4pRfp70iWy6v'
   TOKEN_SECRET = 'TlAyQHs-JmhXGNyUlbXRDKz77Lk'
 
+  #brute:
+  CONSUMER_KEY = 'X4eflyrv2uR3PKkjoE30Tg'
+  CONSUMER_SECRET =  'JkC6QnP5pSGQsnLPxnECsYmLFW0'
+  TOKEN = 'uK6CoRaYPdZotc2HVk7IMFhDrFKJxYyx'
+  TOKEN_SECRET = 'bgDFL4FjH1OG9eRU4JuxAX2QMk4'
+
   def self.api_host
     'api.yelp.com'
   end
