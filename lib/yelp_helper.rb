@@ -11,10 +11,10 @@ module YelpHelper
   # TOKEN_SECRET = 'UPrz5Tf3_L_DswN3zu2nCeJ2c4c'
 
   #Ami:
-  # CONSUMER_KEY = 'oQp4rtg9Br5pqsu56T_f-Q'
-  # CONSUMER_SECRET = 'QdxcWLugM2MP7vXsyzZsAO1e9z8'
-  # TOKEN = 'mtAJKfk5KNHQ1HHfvhFq4pRfp70iWy6v'
-  # TOKEN_SECRET = 'TlAyQHs-JmhXGNyUlbXRDKz77Lk'
+  CONSUMER_KEY = 'oQp4rtg9Br5pqsu56T_f-Q'
+  CONSUMER_SECRET = 'QdxcWLugM2MP7vXsyzZsAO1e9z8'
+  TOKEN = 'mtAJKfk5KNHQ1HHfvhFq4pRfp70iWy6v'
+  TOKEN_SECRET = 'TlAyQHs-JmhXGNyUlbXRDKz77Lk'
 
   #brute:
   CONSUMER_KEY = 'X4eflyrv2uR3PKkjoE30Tg'
@@ -84,7 +84,6 @@ module YelpHelper
 
   def self.query(location)
     access_token.get(path(location)).body
-
   end
 
   def self.path(location)
