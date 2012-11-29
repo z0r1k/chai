@@ -2,6 +2,7 @@ class ShopsController < ApplicationController
   # before_filter :authenticate_user!
 
   def index
+    @shops = Shop.all
   end
 
   def create

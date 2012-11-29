@@ -18,7 +18,7 @@ html, body {
 }
 
 #map_canvas {
-  height: 60%;
+  height: 40%;
   width: 100%;
 }
 
@@ -26,15 +26,12 @@ html, body {
   html, body {
     height: auto;
   }
-
+}
   #map_canvas {
     height: 650px;
   }
-}
 
-#header_box {
 
-}
 
 #logo {
     display:inline;
@@ -72,7 +69,7 @@ html, body {
     border-radius:6px;
     color:#ffffff;
     font-family:arial;
-    font-size:21px;
+    font-size:24px;
     font-weight:bold;
     padding:15px 46px;
     text-decoration:none;
@@ -93,12 +90,13 @@ html, body {
     border-width: 2px 2px;
     height: 60px;
     text-align: center;
-    margin-top: 9px;
+    margin-top: 5px;
+    margin-bottom: 10px;
     margin-right:auto;
-    padding-left:120px;
     color: white;
     font-size: 40px;
     text-align: center;
+    width: 100%;
 }
 
 #banner_box span {
@@ -121,7 +119,7 @@ html, body {
     border:2px solid #eeb44f;
     color:#ffffff;
     font-family:arial;
-    font-size:18px;
+    font-size:24px;
     font-weight:bold;
     padding:11px 34px;
     text-decoration:none;
@@ -141,4 +139,57 @@ html, body {
     position:relative;
     top:1px;
 }
+
+.find-button{
+    display: inline;
+    position: relative;
+    top: 6px;
+    font-size: 32px;
+
+}
+
+.find_button span {
+    display: inline-block;
+    position: relative;
+    top: -12px;
+}
+.find_button input[type=submit] {
+    -moz-box-shadow:inset 1px 1px 3px -6px #fceaca;
+    -webkit-box-shadow:inset 1px 1px 3px -6px #fceaca;
+    box-shadow:inset 1px 1px 3px -6px #fceaca;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffce79), color-stop(1, #eeaf41) );
+    background:-moz-linear-gradient( center top, #ffce79 5%, #eeaf41 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffce79', endColorstr='#eeaf41');
+    background-color:#ffce79;
+    -moz-border-radius:32px;
+    -webkit-border-radius:32px;
+    border-radius:32px;
+    border:2px solid #eeb44f;
+    color:#ffffff;
+    font-family:arial;
+    font-size:24px;
+    font-weight:bold;
+    padding:11px 34px;
+    text-decoration:none;
+    text-shadow:2px 2px 2px #ce8e28;
+    position: relative;
+    top: 12px;
+    display:inline-block;
+    float:left;
+    margin-top: 5px;
+}
+.find_button input[type=submit]:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #eeaf41), color-stop(1, #ffce79) );
+    background:-moz-linear-gradient( center top, #eeaf41 5%, #ffce79 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eeaf41', endColorstr='#ffce79');
+    background-color:#eeaf41;
+}
+.find_button:active {
+    position:relative;
+    top:1px;
+}
+
+
+
+
 
