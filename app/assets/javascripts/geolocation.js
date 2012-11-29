@@ -4,7 +4,7 @@
 // providing data and populating the main page and google map
 var Geolocation = {
   init: function() {
-    $('.find-shops').on('click', this.getGeoLocation);
+    $('#find-shops').on('click', this.getGeoLocation);
     $('#map-something').on('ajax:success', this.shopLists);
     this.currentPosition();
   },
@@ -23,7 +23,6 @@ var Geolocation = {
 // function that returns and displays a list of our Yelp search query for coffeeshops
 // also populates the google map with pins accordingly
   shopLists: function(event, data) {
-    alert("wah!");
     $('#map-something').html(data.html_content);
     for (var i = 0; i < data.businesses.length - 1; i++) {
       var myLatlng = new google.maps.LatLng(data.businesses[i].latitude, data.businesses[i].longitude);
@@ -77,6 +76,7 @@ $(document).ready(function(){
   Geolocation.init();
 
 });
+
 
 
 
