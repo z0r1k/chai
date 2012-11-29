@@ -8,29 +8,16 @@ class ShopsController < ApplicationController
   def create
     # sends a search query to Yelp via our YelpHelper module
     @search = YelpHelper.query("#{params[:latitude]},#{params[:longitude]}")
-    logger.info "------------------"
-    logger.info @search
-    logger.info "------------------"
 
     # gets the results from our YelpHelper module query
     @results = YelpHelper.search("#{params[:latitude]},#{params[:longitude]}")
-    logger.info "------------------"
-    logger.info @results
-    logger.info "------------------"
 
+    @shops = []
     @results[:businesses].each  do |shop|
       Shop.update_or_create_by_name_and_latitude_and_longitude shop.except(:distance, :review_count)
+      @shops << Shop.update_or_create_by_name_and_latitude_and_longitude(shop.except(:distance, :review_count))
     end
 
-
-    render :json => { :businesses => @results[:businesses], :region =>  @results[:region] }
-
-
-
-    logger.info "------------------"
-    logger.info @results
-    logger.info "------------------"
-
-
+    render :json => { :html_content => render_to_string('show', :layout => false), :businesses => @results[:businesses], :region =>  @results[:region] }
   end
 end
