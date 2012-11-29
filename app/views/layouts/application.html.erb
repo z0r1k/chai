@@ -52,7 +52,7 @@
               <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %></li>
             <% else %>
               <li><%= link_to "Sign in", new_user_session_path %></li>
-              <li><%= button_to "Sign up!", new_user_registration_path %></li>
+              <li><%= button_to "Sign up!", new_user_registration_path, :method => 'get' %></li>
             <% end %>
 
           </ul>
@@ -66,10 +66,10 @@
     <%= yield %>
 
     <nav>
-      <a href="public/home.html.erb/">Home</a> |
-      <a href="public/about.html.erb/">About</a> |
-      <a href="public/faq.html.erb/">FAQ</a> |
-      <a href="public/contact.html.erb/">Contact</a>
+      <%= link_to_unless_current "Home", root_path%> |
+      <%= link_to_unless_current "About", about_path%> |
+      <%= link_to_unless_current "Contact", contact_path%> |
+      <%= link_to_unless_current "FAQ", faq_path%> |
     </nav>
 
       <footer>

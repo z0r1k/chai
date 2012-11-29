@@ -69,5 +69,19 @@ module Chai
     # ---------------------------- Devise -----------------
     # for production
     # config.assets.initialize_on_precompile = false
+
+    config.action_mailer.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => "webdevlasse.mygbiz.com",
+      :user_name            => "webdevlasse@webdevlasse.mygbiz.com",
+      :password             => "Christ01",
+      :authentication       => :plain,
+      :enable_starttls_auto => true
+    }
+
+    config.action_mailer.default_url_options = {
+      :host => "webdevlasse.mygbiz.com"
+    }
   end
 end
