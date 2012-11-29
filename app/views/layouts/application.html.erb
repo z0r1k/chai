@@ -19,14 +19,14 @@
           <% else %>
             <li><%= link_to "Sign in", new_user_session_path %></li>
           <% end %>
-          <li><%= button_to "Sign up!", new_user_registration_path %></li>
+          <li><%= button_to "Sign up!", new_user_registration_path, :method => 'get' %></li>
         </ul>
       </div>
     </div>
 
     <div id="banner_box">
       <span>Find a nice place to work.</span>
-      <span><%= button_to "Sign up!", new_user_registration_path %></span>
+      <span><%= button_to "Sign up!", new_user_registration_path, :method => 'get'  %></span>
     </div>
 
     </div>
