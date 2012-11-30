@@ -7,6 +7,7 @@ gem 'thin'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 #gem 'sqlite3'
+
 gem 'pg'
 gem 'devise'
 # Gems used only for assets and not required
@@ -31,6 +32,14 @@ gem 'twitter-bootstrap-rails'
 gem "therubyracer"
 gem "less-rails"
 
+
+group :development, :test do
+  gem "factory_girl_rails"
+  gem "rspec-rails"
+  gem "capybara"
+  gem "guard-rspec"
+  gem "shoulda-matchers"
+end
 
 
 # To use ActiveModel has_secure_password
