@@ -14,7 +14,8 @@ var Geolocation = {
     var mapOptions = {
       zoom: 13,
       center: lngLat,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      animation: google.maps.Animation.DROP,
     };
     map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
     return map;
@@ -30,6 +31,7 @@ var Geolocation = {
         position: myLatlng,
         map: map,
         title: data.businesses[i].name,
+        // animation: google.maps.Animation.DROP,
       });
     }
   },
@@ -42,6 +44,7 @@ var Geolocation = {
         var marker = new google.maps.Marker({
           position: myLatlng,
           map: Geolocation.createMap(myLatlng),
+          animation: google.maps.Animation.DROP,
           title: "You're here", //name
         });
      });

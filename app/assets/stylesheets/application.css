@@ -12,31 +12,30 @@
  *= require_tree .
  */
 
-nav {
+
+
+/*************************************/
+/* GENERAL STYLING *******************/
+/*************************************/
+
+/*nav {
   margin: 15px 0px 15px 0px;
   border-top: solid #22419b 2px;
   padding-top: 10px;
-}
-
-nav a{
-  padding-top: 10px;
-}
-
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+}*/
 
 #map_canvas {
   height: 300px;
   width: 100%;
 }
 
-@media print {
+@media screen {
   html, body {
     height: auto;
   }
+
+
+
 }
 
 
@@ -72,27 +71,6 @@ html, body {
     position: relative;
     margin-top: 30px;
 }
-
-/*#header_action_box input[type=submit] {
-    -moz-box-shadow:inset 0px 0px 0px 0px #cae3fc;
-    -webkit-box-shadow:inset 0px 0px 0px 0px #cae3fc;
-    box-shadow:inset 0px 0px 0px 0px #cae3fc;
-    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #4197ee) );
-    background:-moz-linear-gradient( center top, #79bbff 5%, #4197ee 100% );
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#4197ee');
-    background-color:#79bbff;
-    -moz-border-radius:6px;
-    -webkit-border-radius:6px;
-    border-radius:6px;
-    color:#ffffff;
-    font-family:arial;
-    font-size:24px;
-    font-weight:bold;
-    padding:15px 46px;
-    text-decoration:none;
-    text-shadow:-2px 2px 0px #287ace;
-    margin-right: 0px;
-}*/
 
 #signup input[type=submit]:hover {
     background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4197ee), color-stop(1, #79bbff) );
