@@ -31,7 +31,21 @@ var Geolocation = {
         map: map,
         title: data.businesses[i].name,
       });
-    }
+    };
+    console.log('map: ' + map);
+    $("tr.shop-row").click(function(){
+      console.log($(this).css('background-color'));
+      $("tr.shop-row").css('background-color', 'white');
+      $(this).css('background-color', 'pink');
+      var myLatlng = new google.maps.LatLng(data.businesses[i].latitude, data.businesses[i].longitude);
+      var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: map,
+          icon: 'https://chart.googleapis.com/chart?chst=d_map_xpin_icon&chld=pin_star|home|00FFFF|FF0000',
+          title: "You're here"
+
+      });
+    });
   },
 
 // function to get the users current position based on geolocation
@@ -39,13 +53,13 @@ var Geolocation = {
   currentPosition: function()  {
      navigator.geolocation.getCurrentPosition(function(position){
         var myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-        
+
         var marker = new google.maps.Marker({
           position: myLatlng,
           map: Geolocation.createMap(myLatlng),
           icon: 'https://chart.googleapis.com/chart?chst=d_map_xpin_icon&chld=pin_star|home|00FFFF|FF0000',
           title: "You're here"
-          
+
         });
 
         // var marker = new google.maps.Marker({
