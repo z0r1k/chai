@@ -1,3 +1,4 @@
+ <div class="modal-body">
 <%- model_class = Shop -%>
 
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
@@ -5,26 +6,16 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:latitude) %></th>
-      <th><%= model_class.human_attribute_name(:longitude) %></th>
       <th><%= model_class.human_attribute_name(:rating) %></th>
-      <th><%= model_class.human_attribute_name(:yelp_url) %></th>
-      <th><%= model_class.human_attribute_name(:img_url) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      <!-- <th><%=t '.actions', :default => t("helpers.actions") %></th> -->
     </tr>
   </thead>
   <tbody>
     <% @shops.each do |shop| %>
       <tr>
-        <td><%= link_to shop.id, shop_path(shop) %></td>
         <td><%= link_to(shop.name, shop.yelp_url) %></td>
-        <td><%= shop.latitude %></td>
-        <td><%= shop.longitude %></td>
         <td><%= shop.chai_score.round(1) %></td>
-        <td><%= shop.yelp_url %></td>
-        <td><%= shop.img_url %></td>
        <!-- <td>
            <#%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_shop_path(shop), :class => 'btn btn-mini' %>
@@ -38,6 +29,7 @@
     <% end %>
   </tbody>
 </table>
+</div>
 
 <!-- <#%= link_to t('.new', :default => t("helpers.links.new")),
             new_shop_path,
