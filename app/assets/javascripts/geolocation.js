@@ -39,11 +39,20 @@ var Geolocation = {
   currentPosition: function()  {
      navigator.geolocation.getCurrentPosition(function(position){
         var myLatlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+        
         var marker = new google.maps.Marker({
           position: myLatlng,
           map: Geolocation.createMap(myLatlng),
-          title: "You're here", //name
+          icon: 'https://chart.googleapis.com/chart?chst=d_map_xpin_icon&chld=pin_star|home|00FFFF|FF0000',
+          title: "You're here"
+          
         });
+
+        // var marker = new google.maps.Marker({
+        //   position: myLatlng,
+        //   map: Geolocation.createMap(myLatlng),
+        //   title: "You're here", //name
+        // });
      });
 
   },
