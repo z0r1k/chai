@@ -32,13 +32,13 @@ gem 'twitter-bootstrap-rails'
 gem "therubyracer"
 gem "less-rails"
 
-gem "rspec-rails", :group => [:test, :development]
 
-group :test do
+group :development, :test do
+  gem "factory_girl_rails"
+  gem "rspec-rails"
+  gem "capybara"
   gem "guard-rspec"
   gem "shoulda-matchers"
-  gem "capybara"
-  gem "factory_girl_rails"
 end
 
 
