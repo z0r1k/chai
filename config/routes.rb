@@ -1,6 +1,16 @@
 Chai::Application.routes.draw do
 
   root :to => 'shops#index'
+  # get'/about' :to 'pages#about'
+  # get'/contact' :to 'pages#contact'
+  # get'/faq' :to 'pages#faq'
+
+  %w[about faq].each do |page|
+    get page, controller: "pages", action: page
+  end
+
+  match 'contact' => 'contact#new', :as => 'contact', :via => :get
+  match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
   devise_for :users
 

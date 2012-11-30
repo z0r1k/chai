@@ -43,33 +43,17 @@
 
     <div class="container">
 
-      <div id="header_box">
         <div id="logo"><%= link_to(image_tag("chai_3.gif"), root_path) %></div>
-        <div id="header_action_box">
-          <ul>
-            <% if user_signed_in? %>
-              <li><%= link_to current_user.email %></li>
-              <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %></li>
-            <% else %>
-              <li><%= link_to "Sign in", new_user_session_path %></li>
-              <li><%= button_to "Sign up!", new_user_registration_path %></li>
-            <% end %>
 
-          </ul>
-        </div>
-      </div>
 
-      <div id="banner_box">
-        <span>Find a nice place to work.</span>
-      </div>
 
     <%= yield %>
 
     <nav>
-      <a href="public/home.html.erb/">Home</a> |
-      <a href="public/about.html.erb/">About</a> |
-      <a href="public/faq.html.erb/">FAQ</a> |
-      <a href="public/contact.html.erb/">Contact</a>
+      <%= link_to_unless_current "Home", root_path%> |
+      <%= link_to_unless_current "About", about_path%> |
+      <%= link_to_unless_current "Contact", contact_path%> |
+      <%= link_to_unless_current "FAQ", faq_path%> |
     </nav>
 
       <footer>
