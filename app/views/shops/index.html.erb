@@ -1,8 +1,8 @@
 <div id="header_action_box">
   <ul>
     <% if user_signed_in? %>
-      <li><%= link_to current_user.email %></li>
-      <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %></li>
+      <div class="signed_in_blue_links"><li><%= link_to current_user.email, edit_user_registration_path %></li>
+      <li><%= link_to "Sign out", destroy_user_session_path, :method => 'delete' %></li></div>
     <% else %>
       <li><%= link_to "Sign in", new_user_session_path %></li>
       <div class='signup'><li><%= button_to "Sign up!", new_user_registration_path, :method => 'get'%></li></div?>
@@ -11,8 +11,11 @@
   </ul>
 </div>
 
+<br />
+<div id="top-border"></div>
+
 <div id="find-shops">
-  <button type="button" name="" value="" class="btn-block">Find a nice coffee shop</button>
+  <button type="button" name="" value="" class="btn-block">Find a nice place to work.</button>
 </div>
 
 <div id="map_canvas"></div>

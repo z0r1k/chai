@@ -45,24 +45,20 @@
 
         <div id="logo"><%= link_to(image_tag("chai_3.gif"), root_path) %></div>
 
+        <%= yield %>
 
+        <nav>
+          <%= link_to_unless_current "Home", root_path%> |
+          <%= link_to_unless_current "About", about_path%> |
+          <%= link_to_unless_current "Contact", contact_path%> |
+          <%= link_to_unless_current "FAQ", faq_path%> |
+        </nav>
 
-    <%= yield %>
+        <footer>
+          <p>&copy; Chai 2012</p>
+        </footer>
 
-    <nav>
-      <%= link_to_unless_current "Home", root_path%> |
-      <%= link_to_unless_current "About", about_path%> |
-      <%= link_to_unless_current "Contact", contact_path%> |
-      <%= link_to_unless_current "FAQ", faq_path%> |
-    </nav>
-
-      <footer>
-        <p>&copy; Chai 2012</p>
-      </footer>
-
-    </div> <!-- /container -->
-
-    </div>
+      </div> <!-- /container -->
 
   </body>
 </html>
