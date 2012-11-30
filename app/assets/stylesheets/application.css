@@ -13,7 +13,13 @@
  */
 
 nav {
-  margin: 15px 15px 15px 0px;
+  margin: 15px 0px 15px 0px;
+  border-top: solid #22419b 2px;
+  padding-top: 10px;
+}
+
+nav a{
+  padding-top: 10px;
 }
 html, body {
   height: 100%;
@@ -36,7 +42,6 @@ html, body {
   }
 
 
-
 #logo {
     display:inline;
     margin-left: auto;
@@ -47,10 +52,17 @@ html, body {
   margin-top:26px;
 }
 
+.signed_in_blue_links{
+  margin-top: 70px;
+}
+
 #header_action_box {
     display: inline;
     float: right;
     margin-top: 20px;
+}
+#header_action_box ul {
+  margin-top:0px;
 }
 
 #header_action_box li {
