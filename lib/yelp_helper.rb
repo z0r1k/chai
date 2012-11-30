@@ -5,22 +5,22 @@ require 'json'
 
 module YelpHelper
   #Ferdi:
-  # CONSUMER_KEY = 's3OFJZeLxXg4Zpyik4-Qng'
-  # CONSUMER_SECRET = 'CEoKVSBOfl7I_GBsH_5McAqyv0U'
-  # TOKEN = 'I0EhDz5uRcD44f5QrL38Bl6vdwSpitlR'
-  # TOKEN_SECRET = 'UPrz5Tf3_L_DswN3zu2nCeJ2c4c'
+  CONSUMER_KEY = 's3OFJZeLxXg4Zpyik4-Qng'
+  CONSUMER_SECRET = 'CEoKVSBOfl7I_GBsH_5McAqyv0U'
+  TOKEN = 'I0EhDz5uRcD44f5QrL38Bl6vdwSpitlR'
+  TOKEN_SECRET = 'UPrz5Tf3_L_DswN3zu2nCeJ2c4c'
 
-  #Ami:
-  CONSUMER_KEY = 'oQp4rtg9Br5pqsu56T_f-Q'
-  CONSUMER_SECRET = 'QdxcWLugM2MP7vXsyzZsAO1e9z8'
-  TOKEN = 'mtAJKfk5KNHQ1HHfvhFq4pRfp70iWy6v'
-  TOKEN_SECRET = 'TlAyQHs-JmhXGNyUlbXRDKz77Lk'
-
-  #brute:
-  CONSUMER_KEY = 'X4eflyrv2uR3PKkjoE30Tg'
-  CONSUMER_SECRET =  'JkC6QnP5pSGQsnLPxnECsYmLFW0'
-  TOKEN = 'uK6CoRaYPdZotc2HVk7IMFhDrFKJxYyx'
-  TOKEN_SECRET = 'bgDFL4FjH1OG9eRU4JuxAX2QMk4'
+  # #Ami:
+  # CONSUMER_KEY = 'oQp4rtg9Br5pqsu56T_f-Q'
+  # CONSUMER_SECRET = 'QdxcWLugM2MP7vXsyzZsAO1e9z8'
+  # TOKEN = 'mtAJKfk5KNHQ1HHfvhFq4pRfp70iWy6v'
+  # TOKEN_SECRET = 'TlAyQHs-JmhXGNyUlbXRDKz77Lk'
+  #
+  # #brute:
+  # CONSUMER_KEY = 'X4eflyrv2uR3PKkjoE30Tg'
+  # CONSUMER_SECRET =  'JkC6QnP5pSGQsnLPxnECsYmLFW0'
+  # TOKEN = 'uK6CoRaYPdZotc2HVk7IMFhDrFKJxYyx'
+  # TOKEN_SECRET = 'bgDFL4FjH1OG9eRU4JuxAX2QMk4'
 
   def self.api_host
     'api.yelp.com'

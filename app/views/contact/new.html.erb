@@ -1,3 +1,10 @@
+<% if @message.errors.any? %>
+<ul>
+  <% @message.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
 <%= form_for @message, :url => contact_path do |form| %>
     <fieldset class="fields">
       <div class="field">
@@ -17,6 +24,6 @@
     </fieldset>
 
     <fieldset class="actions">
-      <%= form.submit "Send" %>
+      <%= form.submit "Tell us what you think",:class => "contact_button" %>
     </fieldset>
 <% end %>
