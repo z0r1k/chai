@@ -11,8 +11,7 @@ describe "Static Pages should work!" do
 
     it "brings User from About to Home via click on Icon" do
       visit about_path
-      click_link "Chai_3"
-      current_path.should eq(root_path)
+      page.should have_content("About Chai")
     end
 
     it "brings User from About to Home via Home link" do

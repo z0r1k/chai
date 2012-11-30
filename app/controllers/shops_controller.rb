@@ -7,6 +7,7 @@ class ShopsController < ApplicationController
 
   def create
     # sends a search query to Yelp via our YelpHelper module
+      #check if and where this is being used, if at all
     @search = YelpHelper.query("#{params[:latitude]},#{params[:longitude]}")
     logger.info @search
     # gets the results from our YelpHelper module query
