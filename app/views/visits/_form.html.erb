@@ -1,5 +1,7 @@
 
 
+<div id="top-border"></div>
+Review for: <%= Shop.find(params[:format]).name %>
 <%= form_for(@visit) do |f| %>
 
   <%= f.label 'wifi:' %>
@@ -8,8 +10,10 @@
   <%=f.select :power, options_for_select((1..10))%>
   <%= f.label 'atmosphere:'%>
   <%=f.select :atmosphere, options_for_select((1..10))%>
-  <%= f.label 'shops:' %>
-  <%= f.select :shop_id, options_from_collection_for_select(Shop.all, :id, :name) %>
+
+  <!-- Needs code review by staff! -->
+  <%= f.hidden_field :shop_id, { :value => Shop.find(params[:format]).id } %>
   <%= f.submit "Rate your visit", :class => "btn btn-medium btn-primary" %>
 
 <% end %>
+

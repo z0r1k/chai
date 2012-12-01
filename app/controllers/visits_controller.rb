@@ -8,12 +8,8 @@ class VisitsController < ApplicationController
   def create
     @visit = Visit.new(params[:visit])
     @visit.user = current_user
-    logger.info "****************"
-    logger.info "visit: #{@visit.user_id}"
-    logger.info "params: #{params}"
-    logger.info "****************"
     @visit.save
-
+    redirect_to :root
   end
 
   def new
@@ -37,3 +33,9 @@ class VisitsController < ApplicationController
   end
 
 end
+
+
+# If we need the logger again, it's right here - all cozy
+    # logger.info "****************"
+    # logger.info "params: #{params}"
+    # logger.info "****************"
