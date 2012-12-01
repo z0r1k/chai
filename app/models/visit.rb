@@ -4,9 +4,10 @@ class Visit < ActiveRecord::Base
   belongs_to :shop
   after_create :calculate_shop_chai_score
 
-  def calculate_shop_chai_score
-    shop.calculate_and_save_chai_score
-  end
+
+   def calculate_shop_chai_score
+     shop.calculate_and_save_chai_score
+   end
 
 
 end

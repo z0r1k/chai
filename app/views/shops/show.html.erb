@@ -16,6 +16,8 @@
       <tr>
         <td><%= link_to(shop.name, shop.yelp_url) %></td>
         <td><%= shop.chai_score.round(1) %></td>
+        <td><%= link_to "Rate this shop", new_visit_path(shop) %></td>
+
        <!-- <td>
            <#%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_shop_path(shop), :class => 'btn btn-mini' %>
