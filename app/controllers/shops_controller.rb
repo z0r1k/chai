@@ -7,7 +7,6 @@ class ShopsController < ApplicationController
   def native_results
     @shops = Shop.fetch_results_by_location(params)
     render :json => { :html_content => render_to_string('show', :layout => false) , :businesses => @shops }
-
   end
 
   def create

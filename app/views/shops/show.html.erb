@@ -12,6 +12,13 @@
     </tr>
   </thead>
   <tbody>
+
+    <% @shops.map do |shop| %>
+      <% shop.chai_score = 0 if shop.chai_score.nil? %>
+    <% end %>
+
+    <% @shops.sort_by! { |shop| -1 * shop.chai_score} %>
+
     <% @shops.each do |shop| %>
       <tr>
         <td><%= link_to(shop.name, shop.yelp_url) %></td>
@@ -36,3 +43,4 @@
 <!-- <#%= link_to t('.new', :default => t("helpers.links.new")),
             new_shop_path,
             :class => 'btn btn-primary' %> -->
+
