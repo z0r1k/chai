@@ -12,34 +12,31 @@
  *= require_tree .
  */
 
-nav {
+
+
+/*************************************/
+/* GENERAL STYLING                   */
+/*************************************/
+
+/*nav {
   margin: 15px 0px 15px 0px;
   border-top: solid #22419b 2px;
   padding-top: 10px;
-}
-
-nav a{
-  padding-top: 10px;
-}
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+}*/
 
 #map_canvas {
-  height: 40%;
+  height: 300px;
   width: 100%;
 }
 
-@media print {
+@media screen {
   html, body {
     height: auto;
   }
+
+
+
 }
-  #map_canvas {
-    height: 400px;
-  }
 
 
 #logo {
@@ -48,9 +45,7 @@ html, body {
     margin-top: 35px;
 }
 
-#logo a img{
-  margin-top:26px;
-}
+#logo a img{ }
 
 .signed_in_blue_links{
   margin-top: 70px;
@@ -59,7 +54,7 @@ html, body {
 #header_action_box {
     display: inline;
     float: right;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
 }
 #header_action_box ul {
   margin-top:0px;
@@ -77,26 +72,6 @@ html, body {
     margin-top: 30px;
 }
 
-#header_action_box input[type=submit] {
-    -moz-box-shadow:inset 0px 0px 0px 0px #cae3fc;
-    -webkit-box-shadow:inset 0px 0px 0px 0px #cae3fc;
-    box-shadow:inset 0px 0px 0px 0px #cae3fc;
-    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #4197ee) );
-    background:-moz-linear-gradient( center top, #79bbff 5%, #4197ee 100% );
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#4197ee');
-    background-color:#79bbff;
-    -moz-border-radius:6px;
-    -webkit-border-radius:6px;
-    border-radius:6px;
-    color:#ffffff;
-    font-family:arial;
-    font-size:24px;
-    font-weight:bold;
-    padding:15px 46px;
-    text-decoration:none;
-    text-shadow:-2px 2px 0px #287ace;
-    margin-right: 0px;
-}
 #signup input[type=submit]:hover {
     background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4197ee), color-stop(1, #79bbff) );
     background:-moz-linear-gradient( center top, #4197ee 5%, #79bbff 100% );
@@ -131,7 +106,7 @@ html, body {
   display:inline-block;
   float:left;
   margin-top: 0px;
-  margin-bottom: 20px;
+  margin-bottom: 17px;
   height:50px;
 
 }
@@ -167,6 +142,44 @@ html, body {
   left:60%;
   margin-left: -300px;
 }
+
+
+
+/****************************/
+/* LOADING SCREEN ANIMATION */
+/****************************/
+
+/* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   speak for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+.vegeta {
+    display:    none;
+    position:   fixed;
+    z-index:    1000;
+    top:        0;
+    left:       0;
+    height:     100%;
+    width:      100%;
+    background: rgba( 255, 255, 255, .8 ) 
+                url('vegeta.gif') 
+                50% 50% 
+                no-repeat;
+}
+
+/* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+body.loading {
+    overflow: hidden;   
+}
+
+/* Anytime the body has the loading class, our
+   modal element will be visible */
+body.loading .vegeta {
+    display: block;
+}
+
 
 
 
@@ -211,7 +224,7 @@ html, body {
 
 
 #top-border {
-  border-top: solid #22419b 5px;
-  margin-bottom: 7px;
+  border-top: solid #22419b 3px;
+  margin-bottom: 5px;
 }
 

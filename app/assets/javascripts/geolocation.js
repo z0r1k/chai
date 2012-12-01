@@ -11,12 +11,14 @@ var Geolocation = {
     this.sendPositionAndGetNativeResults();
   },
 
+
 // function that creates the map and displays it on our main page
   createMap: function(lngLat) {
     var mapOptions = {
       zoom: 13,
       center: lngLat,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      animation: google.maps.Animation.DROP,
     };
     map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
     return map;
@@ -44,6 +46,7 @@ var Geolocation = {
         position: myLatlng,
         map: map,
         title: data.businesses[i].name,
+        // animation: google.maps.Animation.DROP,
       });
     }
   },
@@ -56,7 +59,8 @@ var Geolocation = {
         var marker = new google.maps.Marker({
           position: myLatlng,
           map: Geolocation.createMap(myLatlng),
-          title: "You're here" //name
+          animation: google.maps.Animation.DROP,
+          title: "You're here", //name
         });
     });
 },
@@ -84,6 +88,9 @@ var Geolocation = {
 // function that sends an Ajaxs request to our rails sever and waits for a reply
 // on successful reply triggers a 'success' which causes the displaying of our query items
   getGeoLocation: function() {
+    $('#find-shops button').attr("disabled", true);
+    $('#find-shops').fadeTo(500, 0.2);
+    $('body').addClass("loading");
     navigator.geolocation.getCurrentPosition(function(position){
       $.ajax({
         type: 'post',
@@ -102,11 +109,15 @@ var Geolocation = {
         complete: function(xhr, status) {
 
         //   $('#map-something').trigger('ajax:complete', [xhr, status]);
+          $('body').removeClass("loading");
+          $('#find-shops button').attr("disabled", false);
+          $('#find-shops').fadeTo(500, 1);
         }
       });
     });
   }
 };
+
 
 // document ready wrapper for our Geolocation object
 $(document).ready(function(){
