@@ -11,7 +11,7 @@ class Shop < ActiveRecord::Base
     score = calculate_chai_score
     if score.nil?
       self.chai_score = 0
-    else 
+    else
       self.chai_score = score
     end
     self.save

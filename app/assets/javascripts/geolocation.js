@@ -5,8 +5,10 @@
 var Geolocation = {
   init: function() {
     $('#find-shops').on('click', this.getGeoLocation);
-    $('#map-something').on('ajax:success', this.shopLists);
+    //$('#map-something').on('ajax:success', this.shopLists);
+    $('#map-native-results').on('ajax:success',this.shopListFromDB);
     this.currentPosition();
+    this.sendPositionAndGetNativeResults();
   },
 
 
@@ -24,8 +26,20 @@ var Geolocation = {
 
 // function that returns and displays a list of our Yelp search query for coffeeshops
 // also populates the google map with pins accordingly
-  shopLists: function(event, data) {
-    $('#map-something').html(data.html_content);
+  // shopLists: function(event, data) {
+  //   $('#map-something').html(data.html_content);
+  //   for (var i = 0; i < data.businesses.length - 1; i++) {
+  //     var myLatlng = new google.maps.LatLng(data.businesses[i].latitude, data.businesses[i].longitude);
+  //     var marker = new google.maps.Marker({
+  //       position: myLatlng,
+  //       map: map,
+  //       title: data.businesses[i].name,
+  //     });
+  //   }
+  // },
+
+  shopListFromDB: function(event, data) {
+    $('#map-native-results').html(data.html_content);
     for (var i = 0; i < data.businesses.length - 1; i++) {
       var myLatlng = new google.maps.LatLng(data.businesses[i].latitude, data.businesses[i].longitude);
       var marker = new google.maps.Marker({
@@ -48,8 +62,27 @@ var Geolocation = {
           animation: google.maps.Animation.DROP,
           title: "You're here", //name
         });
-     });
+    });
+},
 
+  sendPositionAndGetNativeResults: function() {
+    navigator.geolocation.getCurrentPosition(function(position){
+      $.ajax({
+        type: 'post',
+        url: '/native_results',
+        dataType: 'json',
+        data: {longitude: position.coords.longitude, latitude: position.coords.latitude},
+        success: function(data, status, xhr) {
+          $('#map-native-results').trigger('ajax:success', [data, status, xhr]);
+        },
+        error: function(xhr, status, error) {
+          $('#map-native-results').trigger('ajax:error', [xhr, status, error]);
+        },
+        complete: function(xhr, status) {
+          $('#map-native-results').trigger('ajax:complete', [xhr, status]);
+        }
+      });
+    });
   },
 
 // function that sends an Ajaxs request to our rails sever and waits for a reply
@@ -65,14 +98,18 @@ var Geolocation = {
         dataType: 'json',
         data: {longitude: position.coords.longitude, latitude: position.coords.latitude},
         success: function(data, status, xhr) {
-          $('#map-something').trigger('ajax:success', [data, status, xhr]);
+          $('#map-native-results').trigger('ajax:success', [data, status, xhr]);
         },
-        error: function(xhr, status, error) {
-          $('#map-something').trigger('ajax:error', [xhr, status, error]);
-        },
+        // success: function(data, status, xhr) {
+        //   $('#map-something').trigger('ajax:success', [data, status, xhr]);
+        // },
+        // error: function(xhr, status, error) {
+        //   $('#map-something').trigger('ajax:error', [xhr, status, error]);
+        // },
         complete: function(xhr, status) {
-          $('#map-something').trigger('ajax:complete', [xhr, status]);
-          $('body').removeClass("loading"); 
+
+        //   $('#map-something').trigger('ajax:complete', [xhr, status]);
+          $('body').removeClass("loading");
           $('#find-shops button').attr("disabled", false);
           $('#find-shops').fadeTo(500, 1);
         }
@@ -84,11 +121,7 @@ var Geolocation = {
 
 // document ready wrapper for our Geolocation object
 $(document).ready(function(){
+
   Geolocation.init();
 
 });
-
-
-
-
-

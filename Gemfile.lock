@@ -67,6 +67,7 @@ GEM
       factory_girl (~> 4.1.0)
       railties (>= 3.0.0)
     ffi (1.2.0)
+    geocoder (1.1.5)
     guard (1.5.4)
       listen (>= 0.4.2)
       lumberjack (>= 1.0.2)
@@ -202,6 +203,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   factory_girl_rails
+  geocoder
   guard-rspec
   jquery-rails
   less-rails
