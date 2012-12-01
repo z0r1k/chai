@@ -43,7 +43,11 @@
 
     <div class="container">
 
-        <div id="logo"><%= link_to(image_tag("chai_3.gif"), root_path) %></div>
+        <div id="logo"><%= link_to(image_tag("Chai.png"), root_path) %>
+          <%= render "pages/signupinout" %>
+            <div id="top-border"></div>
+        </div>
+
 
         <%= yield %>
 
