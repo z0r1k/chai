@@ -24,7 +24,8 @@ class Shop < ActiveRecord::Base
     shop
   end
 
-  def self.native_results_helper(params)
+
+  def self.fetch_results_by_location(params)
     location = { latitude: params[:latitude], longitude: params[:longitude] }
     box = GeoHelper.bounding_box(location,3)
     shops = Shop.where("latitude <= ? AND latitude >= ? AND longitude <= ? AND longitude >= ?",
@@ -37,7 +38,6 @@ class Shop < ActiveRecord::Base
     shops.sort_by! {|shop| -1 * shop.chai_score }
     shops
   end
-
 end
 
 
