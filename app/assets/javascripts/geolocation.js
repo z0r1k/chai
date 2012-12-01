@@ -57,6 +57,7 @@ var Geolocation = {
   getGeoLocation: function() {
     $('#find-shops button').attr("disabled", true);
     $('#find-shops').fadeTo(500, 0.2);
+    $('body').addClass("loading");
     navigator.geolocation.getCurrentPosition(function(position){
       $.ajax({
         type: 'post',
@@ -71,6 +72,7 @@ var Geolocation = {
         },
         complete: function(xhr, status) {
           $('#map-something').trigger('ajax:complete', [xhr, status]);
+          $('body').removeClass("loading"); 
           $('#find-shops button').attr("disabled", false);
           $('#find-shops').fadeTo(500, 1);
         }
@@ -78,7 +80,6 @@ var Geolocation = {
     });
   }
 };
-
 
 
 // document ready wrapper for our Geolocation object
