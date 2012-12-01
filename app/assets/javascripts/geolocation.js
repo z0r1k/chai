@@ -9,6 +9,7 @@ var Geolocation = {
     this.currentPosition();
   },
 
+
 // function that creates the map and displays it on our main page
   createMap: function(lngLat) {
     var mapOptions = {
@@ -54,6 +55,8 @@ var Geolocation = {
 // function that sends an Ajaxs request to our rails sever and waits for a reply
 // on successful reply triggers a 'success' which causes the displaying of our query items
   getGeoLocation: function() {
+    $('#find-shops button').attr("disabled", true);
+    $('#find-shops').fadeTo(500, 0.2);
     navigator.geolocation.getCurrentPosition(function(position){
       $.ajax({
         type: 'post',
@@ -68,11 +71,15 @@ var Geolocation = {
         },
         complete: function(xhr, status) {
           $('#map-something').trigger('ajax:complete', [xhr, status]);
+          $('#find-shops button').attr("disabled", false);
+          $('#find-shops').fadeTo(500, 1);
         }
       });
     });
   }
 };
+
+
 
 // document ready wrapper for our Geolocation object
 $(document).ready(function(){
