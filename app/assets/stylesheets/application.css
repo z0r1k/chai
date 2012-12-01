@@ -12,17 +12,18 @@
  *= require_tree .
  */
 
+@font-face {
+  font-family: "Pacifico";
+  src: url(/assets/Pacifico-webfont.eot);
+  src: local("Pacifico Heavy"), local("Pacifico-Heavy"), url(/assets/Pacifico-webfont.eot) format("embedded-opentype"), url(/assets/Pacifico-webfont.woff) format("woff"), url(/assets/Pacifico-webfont.ttf) format("truetype"), url(/assets/Pacifico-webfont.svg) format("svg");
+  font-weight: 900;
+  font-style: normal;
+}
 
 
 /*************************************/
 /* GENERAL STYLING                   */
 /*************************************/
-
-/*nav {
-  margin: 15px 0px 15px 0px;
-  border-top: solid #22419b 2px;
-  padding-top: 10px;
-}*/
 
 #map_canvas {
   height: 300px;
@@ -33,9 +34,6 @@
   html, body {
     height: auto;
   }
-
-
-
 }
 
 
@@ -43,6 +41,7 @@
     display:inline;
     margin-left: auto;
     margin-top: 35px;
+    margin-left: -30px;
 }
 
 #logo a img{ }
@@ -63,7 +62,7 @@
 #header_action_box li {
     display: inline;
     float: left;
-    font-family: Arial, sans-serif;
+    font-family: 'Pacifico', sans-serif;
     margin: 5px;
 }
 
@@ -108,7 +107,7 @@
   margin-top: 0px;
   margin-bottom: 17px;
   height:50px;
-
+  font-family: 'Pacifico', sans-serif;
 }
 
 
@@ -204,6 +203,7 @@ body.loading .vegeta {
   text-decoration:none;
   text-shadow:1px 0px 0px #528ecc;
   margin: 5px 5px 5px 150px;
+  font-family: 'Pacifico', sans-serif;
 
 }
 
