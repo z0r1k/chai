@@ -5,17 +5,7 @@ class ShopsController < ApplicationController
   # end
 
   def native_results
-    location = { latitude: params[:latitude], longitude: params[:longitude] }
-    box = GeoHelper.bounding_box(location,3)
-    @shops = Shop.where("latitude <= ? AND latitude >= ? AND longitude <= ? AND longitude >= ?",
-               box[:north_latitude], box[:south_latitude], box[:east_longitude], box[:west_longitude])
-
-    @shops.map do |shop|
-      shop.chai_score = 0 if shop.chai_score.nil?
-    end
-
-    @shops.sort_by! {|shop| -1 * shop.chai_score }
-
+    @shops = Shop.native_results_helper(params)
     render :json => { :html_content => render_to_string('show', :layout => false) , :businesses => @shops }
 
   end
@@ -37,6 +27,7 @@ class ShopsController < ApplicationController
     box = GeoHelper.bounding_box(location,3)
     @shops = Shop.where("latitude <= ? AND latitude >= ? AND longitude <= ? AND longitude >= ?",
                box[:north_latitude], box[:south_latitude], box[:east_longitude], box[:west_longitude])
+
     @shops.map do |shop|
       shop.chai_score = 0 if shop.chai_score.nil?
     end

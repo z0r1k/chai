@@ -15,7 +15,7 @@ var Geolocation = {
 // function that creates the map and displays it on our main page
   createMap: function(lngLat) {
     var mapOptions = {
-      zoom: 13,
+      zoom: 16,
       center: lngLat,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       animation: google.maps.Animation.DROP,
@@ -48,6 +48,13 @@ var Geolocation = {
         title: data.businesses[i].name,
         // animation: google.maps.Animation.DROP,
       });
+      var infowindow = new google.maps.InfoWindow({
+        content: data.businesses[i].name,
+        position: myLatlng,
+      });
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map,marker);
+      });
     }
   },
 
@@ -60,6 +67,7 @@ var Geolocation = {
           position: myLatlng,
           map: Geolocation.createMap(myLatlng),
           animation: google.maps.Animation.DROP,
+          icon: 'https://chart.googleapis.com/chart?chst=d_map_xpin_icon&chld=pin_star|home|00FFFF|FF0000',
           title: "You're here", //name
         });
     });
@@ -100,15 +108,10 @@ var Geolocation = {
         success: function(data, status, xhr) {
           $('#map-native-results').trigger('ajax:success', [data, status, xhr]);
         },
-        // success: function(data, status, xhr) {
-        //   $('#map-something').trigger('ajax:success', [data, status, xhr]);
-        // },
-        // error: function(xhr, status, error) {
-        //   $('#map-something').trigger('ajax:error', [xhr, status, error]);
-        // },
+        error: function(xhr, status, error) {
+          $('#map-native-results').trigger('ajax:error', [xhr, status, error]);
+        },
         complete: function(xhr, status) {
-
-        //   $('#map-something').trigger('ajax:complete', [xhr, status]);
           $('body').removeClass("loading");
           $('#find-shops button').attr("disabled", false);
           $('#find-shops').fadeTo(500, 1);
