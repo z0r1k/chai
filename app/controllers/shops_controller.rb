@@ -1,8 +1,8 @@
 class ShopsController < ApplicationController
 
-  def index
-    @shops = Shop.all
-  end
+  # def index
+  #   @shops = Shop.all
+  # end
 
   def native_results
     location = { latitude: params[:latitude], longitude: params[:longitude] }
@@ -15,6 +15,7 @@ class ShopsController < ApplicationController
     end
 
     @shops.sort_by! {|shop| -1 * shop.chai_score }
+
     render :json => { :html_content => render_to_string('show', :layout => false) , :businesses => @shops }
 
   end
