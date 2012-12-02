@@ -34,13 +34,13 @@ var Geolocation = {
         icon: "http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=cafe%7C996600",
         title: data.businesses[i].name,
       });
-      var infowindow = new google.maps.InfoWindow({
-        content: data.businesses[i].name,
-        position: myLatlng,
-      });
-      google.maps.event.addListener(marker, 'click', function() {
-        infowindow.open(map,marker);
-      });
+      // var infowindow = new google.maps.InfoWindow({
+      //   content: data.businesses[i].name,
+      //   position: myLatlng,
+      // });
+      // google.maps.event.addListener(marker, 'click', function() {
+      //   infowindow.open(map,marker);
+      // });
     }
   },
 
