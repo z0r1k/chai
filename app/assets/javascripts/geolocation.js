@@ -17,7 +17,7 @@ var Geolocation = {
       zoom: 16,
       center: lngLat,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
-      animation: google.maps.Animation.DROP,
+      //animation: google.maps.Animation.DROP,
     };
     map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
     return map;
@@ -26,6 +26,7 @@ var Geolocation = {
 
   shopListFromDB: function(event, data) {
     $('#map-native-results').html(data.html_content);
+    var infowindow = new google.maps.InfoWindow();
     for (var i = 0; i < data.businesses.length - 1; i++) {
       var myLatlng = new google.maps.LatLng(data.businesses[i].latitude, data.businesses[i].longitude);
       var marker = new google.maps.Marker({
@@ -33,14 +34,13 @@ var Geolocation = {
         map: map,
         icon: "http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=cafe%7C996600",
         title: data.businesses[i].name,
+        html: data.businesses[i].name,
       });
-      // var infowindow = new google.maps.InfoWindow({
-      //   content: data.businesses[i].name,
-      //   position: myLatlng,
-      // });
-      // google.maps.event.addListener(marker, 'click', function() {
-      //   infowindow.open(map,marker);
-      // });
+      
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(this.html);
+        infowindow.open(map,this);
+      });
     }
   },
 
