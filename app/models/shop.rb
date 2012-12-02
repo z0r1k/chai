@@ -3,19 +3,18 @@ class Shop < ActiveRecord::Base
   has_many :visits
   validates :name, :uniqueness => { :scope => [:latitude , :longitude] }
 
+
   def calculate_chai_score
       visits.average("wifi+power+atmosphere").to_f / 3
   end
 
+# checks for the shops chai rating and if it's nil changes it to zero
   def calculate_and_save_chai_score
     score = calculate_chai_score
-    if score.nil?
-      self.chai_score = 0
-    else
-      self.chai_score = score
-    end
+    score.nil? ? (self.chai_score = 0) : (self.chai_score = score)
     self.save
   end
+
 
   def self.update_or_create_by_name_and_latitude_and_longitude(params)
     name, long, lat = params.delete(:name), params.delete(:latitude), params.delete(:longitude)

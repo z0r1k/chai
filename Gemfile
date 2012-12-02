@@ -36,6 +36,7 @@ gem "less-rails"
 
 
 group :development, :test do
+  gem 'simplecov'
   gem "factory_girl_rails"
   gem "rspec-rails"
   gem "capybara"
