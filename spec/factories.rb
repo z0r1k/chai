@@ -19,10 +19,10 @@ FactoryGirl.define do
   end
 
   factory :shop2, class: Shop do
-    id         1
+    id         2
     address    "717 California Ave, San Francisco, CA"
     name       "FlatIron Coffee"
-    latitude   37.7896539
+    latitude   17.7896539
     longitude  -122.4019653
     rating     4.5
     yelp_url  "http://www.devbootcamp.com"
