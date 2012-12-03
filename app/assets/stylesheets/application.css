@@ -34,7 +34,7 @@
 }
 
 .info-window #info-window-image {
-  text-align: right;
+  float:right;
 }
 
 #map_canvas {
