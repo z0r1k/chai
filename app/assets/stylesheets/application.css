@@ -24,6 +24,18 @@
 /*************************************/
 /* GENERAL STYLING                   */
 /*************************************/
+.info-window {
+  width: 250px;
+  height: 200px;
+}
+
+.info-window #info-window-address {
+  text-align: left;
+}
+
+.info-window #info-window-image {
+  text-align: right;
+}
 
 #map_canvas {
   height: 300px;
@@ -233,4 +245,6 @@ body.loading .vegeta {
 #top-border {
   border-top: solid black 3px;
 }
+
+
 
