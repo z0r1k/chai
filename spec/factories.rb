@@ -1,10 +1,16 @@
 FactoryGirl.define do
-  factory :user do
-  email_variable = (('a'..'z').to_a + (0..9).to_a).shuffle[0..6].join
-  password_variable = url_short = (('a'..'z').to_a + (0..9).to_a).shuffle[0..10].join
+  factory :user1, class: User do
+    email_variable = (('a'..'z').to_a + (0..9).to_a).shuffle[0..6].join
+    password_variable = url_short = (('a'..'z').to_a + (0..9).to_a).shuffle[0..10].join
     email "#{email_variable}@chai.com"
     password "#{password_variable}"
   end
+
+  factory :user2, class: User do
+    email "ferdi@chai.com"
+    password "000000"
+  end
+
 
   factory :shop1, class: Shop do
     id         1
@@ -19,10 +25,10 @@ FactoryGirl.define do
   end
 
   factory :shop2, class: Shop do
-    id         1
+    id         2
     address    "717 California Ave, San Francisco, CA"
     name       "FlatIron Coffee"
-    latitude   37.7896539
+    latitude   17.7896539
     longitude  -122.4019653
     rating     4.5
     yelp_url  "http://www.devbootcamp.com"
