@@ -6,7 +6,14 @@ class ShopsController < ApplicationController
 
   def native_results
     @shops = Shop.fetch_results_by_location(params)
-    render :json => { :html_content => render_to_string('show', :layout => false) , :businesses => @shops }
+    #render :json => { :html_content => render_to_string('show', :layout => false), :businesses => @shops }
+    @markers_info = []
+    @shops.each do |shop|
+      @markers_info << render_to_string(:partial => 'marker_info', :layout => false, :object => shop)
+    end
+    render :json => { :html_content => render_to_string('show', :layout => false),
+                      :businesses => @shops,
+                      :html_marker_info => @markers_info }
   end
 
   def create
@@ -17,13 +24,23 @@ class ShopsController < ApplicationController
 
     # gets the results from our YelpHelper module query
     @results = YelpHelper.search("#{params[:latitude]},#{params[:longitude]}")
+    
+    logger.info '--------------'
 
     @results[:businesses].each  do |shop|
+      logger.info shop
       Shop.update_or_create_by_name_and_latitude_and_longitude(shop.except(:distance, :review_count))
     end
-
+    
+    logger.info '--------------'
+    
     @shops = Shop.fetch_results_by_location(params)
-
-    render :json => { :html_content => render_to_string('show', :layout => false) , :businesses => @shops }
+    @markers_info = []
+    @shops.each do |shop|
+      @markers_info << render_to_string(:partial => 'marker_info', :layout => false, :object => shop)
+    end
+    render :json => { :html_content => render_to_string('show', :layout => false),
+                      :businesses => @shops,
+                      :html_marker_info => @markers_info }
   end
 end
