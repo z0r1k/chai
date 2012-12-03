@@ -68,7 +68,7 @@ module YelpHelper
         longitude: coffee['location']['coordinate']['longitude'],
         postal_code: coffee['location']['postal_code'],
         country_code: coffee['location']['country_code'],
-        address: coffee['location']['address'],
+        address: coffee['location']['address'][0],
         city: coffee['location']['city'],
         state_code: coffee['location']['state_code'],
         phone: coffee['location']['phone'],

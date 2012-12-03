@@ -34,7 +34,8 @@ var Geolocation = {
         map: map,
         icon: "http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=cafe%7C996600",
         title: data.businesses[i].name,
-        html: data.businesses[i].name,
+        html: data.html_marker_info[i],
+        minWidth: '200',
       });
       
       google.maps.event.addListener(marker, 'click', function() {
