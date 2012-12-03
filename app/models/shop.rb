@@ -1,5 +1,5 @@
 class Shop < ActiveRecord::Base
-  attr_accessible :name, :latitude, :longitude, :rating, :yelp_url, :img_url
+  attr_accessible :name, :latitude, :longitude, :rating, :yelp_url, :img_url, :address
   has_many :visits
   validates :name, :uniqueness => { :scope => [:latitude , :longitude] }
 
