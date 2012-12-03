@@ -52,7 +52,7 @@ h2 {
 #logo a img{ }
 
 .signed_in_blue_links{
-  margin-top: 70px;
+  padding: 34px;
 }
 
 #header_action_box {
@@ -73,6 +73,7 @@ h2 {
 }
 
 #header_action_box li a {
+    display:block;
     position: relative;
     margin-top: 30px;
 }
