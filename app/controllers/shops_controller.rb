@@ -6,7 +6,9 @@ class ShopsController < ApplicationController
 
   def native_results
     @shops = Shop.fetch_results_by_location(params)
-    #render :json => { :html_content => render_to_string('show', :layout => false), :businesses => @shops }
+    # checks for the results from the database and calls 'create' when less than 5
+    create if @shops.length < 5
+    
     @markers_info = []
     @shops.each do |shop|
       @markers_info << render_to_string(:partial => 'marker_info', :layout => false, :object => shop)

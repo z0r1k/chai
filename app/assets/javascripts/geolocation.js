@@ -3,11 +3,17 @@
 // longitude & latitude + some additional functions to help with
 // providing data and populating the main page and google map
 var Geolocation = {
-  init: function() {
+  init: function(currentPosition) {
+    if (currentPosition === undefined) {
+      var currentPosition = this.currentPosition()
+    }
+    else
+
     $('#find-shops').on('click', this.getGeoLocation);
     $('#map-native-results').on('ajax:success',this.shopListFromDB);
+    $('#searchRemoteResults').on('click', this.findRemoteResultsBySearch);
     this.currentPosition();
-    this.sendPositionAndGetNativeResults();
+    this.sendCurrentPositionAndGetCoffeshopResults();
   },
 
 
@@ -17,7 +23,6 @@ var Geolocation = {
       zoom: 16,
       center: lngLat,
       mapTypeId: google.maps.MapTypeId.ROADMAP,
-      //animation: google.maps.Animation.DROP,
     };
     map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
     return map;
@@ -35,7 +40,7 @@ var Geolocation = {
         icon: "http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=cafe%7C996600",
         title: data.businesses[i].name,
         html: data.html_marker_info[i],
-        minWidth: '200',
+        // minWidth: '200',
       });
       
       google.maps.event.addListener(marker, 'click', function() {
@@ -44,6 +49,8 @@ var Geolocation = {
       });
     }
   },
+
+
 
 
 // function to get the users current position based on geolocation
@@ -62,25 +69,29 @@ var Geolocation = {
 },
 
 
-  sendPositionAndGetNativeResults: function() {
-    navigator.geolocation.getCurrentPosition(function(position){
-      $.ajax({
-        type: 'post',
-        url: '/native_results',
-        dataType: 'json',
-        data: {longitude: position.coords.longitude, latitude: position.coords.latitude},
-        success: function(data, status, xhr) {
-          $('#map-native-results').trigger('ajax:success', [data, status, xhr]);
-        },
-        error: function(xhr, status, error) {
-          $('#map-native-results').trigger('ajax:error', [xhr, status, error]);
-        },
-        complete: function(xhr, status) {
-          $('#map-native-results').trigger('ajax:complete', [xhr, status]);
-        }
-      });
-    });
+  sendCurrentPositionAndGetCoffeshopResults: function() {
+    navigator.geolocation.getCurrentPosition(function(paramCurrentPosition){
+          Geolocation.sendPositionAndGetRemoteResults(paramCurrentPosition.coords.latitude, paramCurrentPosition.coords.longitude);
+      }); 
   },
+
+  sendPositionAndGetRemoteResults: function(latitude, longitude){
+      $.ajax({
+          type: 'post',
+          url: '/native_results',
+          dataType: 'json',
+          data: {longitude: longitude, latitude: latitude},
+          success: function(data, status, xhr) {
+            $('#map-native-results').trigger('ajax:success', [data, status, xhr]);
+          },
+          error: function(xhr, status, error) {
+            $('#map-native-results').trigger('ajax:error', [xhr, status, error]);
+          },
+          complete: function(xhr, status) {
+            $('#map-native-results').trigger('ajax:complete', [xhr, status]);
+          }
+        });
+    },
 
 
 // function that sends an Ajaxs request to our rails sever and waits for a reply
@@ -99,7 +110,7 @@ var Geolocation = {
           $('#map-native-results').trigger('ajax:success', [data, status, xhr]);
         },
         error: function(xhr, status, error) {
-          $('#map-native-results').trigger('ajax:error', [xhr, status, error]);
+          $('#map-native-results').trigger('ajax:error', [xhr, status, error]); 
         },
         complete: function(xhr, status) {
           $('body').removeClass("loading");
@@ -108,9 +119,30 @@ var Geolocation = {
         }
       });
     });
+  },
+
+
+  findRemoteResultsBySearch: function(){
+    var address = document.getElementById("address").value;
+    geocoder = new google.maps.Geocoder();
+    geocoder.geocode( { 'address': address}, function(results, status) {
+      if (status == google.maps.GeocoderStatus.OK) {
+        map.setCenter(results[0].geometry.location);
+        var marker = new google.maps.Marker({
+            map: map,
+            position: results[0].geometry.location,
+            icon: 'https://chart.googleapis.com/chart?chst=d_map_xpin_icon&chld=pin_star|home|00FFFF|FF0000',
+        });
+        var latitude = results[0].geometry.location.$a;
+        var longitude = results[0].geometry.location.ab;
+
+        Geolocation.sendPositionAndGetRemoteResults(latitude, longitude)
+      } else {
+        alert("Geocode was not successful for the following reason: " + status);
+      }
+    });
   }
 };
-
 
 // document ready wrapper for our Geolocation object
 $(document).ready(function(){
