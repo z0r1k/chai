@@ -51,30 +51,30 @@ var Geolocation = {
 
 // function that sends an Ajaxs request to our rails sever and waits for a reply
 // on successful reply triggers a 'success' which causes the displaying of our query items
-  getGeoLocation: function() {
-    $('#find-shops button').attr("disabled", true);
-    $('#find-shops').fadeTo(500, 0.2);
-    $('body').addClass("loading");
-    navigator.geolocation.getCurrentPosition(function(position){
-      $.ajax({
-        type: 'post',
-        url: '/shops',
-        dataType: 'json',
-        data: {longitude: position.coords.longitude, latitude: position.coords.latitude},
-        success: function(data, status, xhr) {
-          $('#map-native-results').trigger('ajax:success', [data, status, xhr]);
-        },
-        error: function(xhr, status, error) {
-          $('#map-native-results').trigger('ajax:error', [xhr, status, error]);
-        },
-        complete: function(xhr, status) {
-          $('body').removeClass("loading");
-          $('#find-shops button').attr("disabled", false);
-          $('#find-shops').fadeTo(500, 1);
-        }
-      });
-    });
-  },
+  // getGeoLocation: function() {
+  //   $('#find-shops button').attr("disabled", true);
+  //   $('#find-shops').fadeTo(500, 0.2);
+  //   $('body').addClass("loading");
+  //   navigator.geolocation.getCurrentPosition(function(position){
+  //     $.ajax({
+  //       type: 'post',
+  //       url: '/shops',
+  //       dataType: 'json',
+  //       data: {longitude: position.coords.longitude, latitude: position.coords.latitude},
+  //       success: function(data, status, xhr) {
+  //         $('#map-native-results').trigger('ajax:success', [data, status, xhr]);
+  //       },
+  //       error: function(xhr, status, error) {
+  //         $('#map-native-results').trigger('ajax:error', [xhr, status, error]);
+  //       },
+  //       complete: function(xhr, status) {
+  //         $('body').removeClass("loading");
+  //         $('#find-shops button').attr("disabled", false);
+  //         $('#find-shops').fadeTo(500, 1);
+  //       }
+  //     });
+  //   });
+  // },
 
 
 
