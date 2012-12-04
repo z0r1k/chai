@@ -1,4 +1,6 @@
 require 'spec_helper'
+require 'simplecov'
+SimpleCov.start 'rails'
 
 ##############################################################################
 # add:
@@ -26,20 +28,18 @@ describe "Authentification cycle working correctly: " do
     current_path.should eq(new_user_registration_path)
   end
 
-  xit "Lets User Sign Up from Home Page" do
+  it "Lets User Sign Up from Home Page" do
+    User.destroy_all
     visit root_path
     expect(page).to have_link("Sign up!")
     click_link "Sign up!"
     current_path.should eq(new_user_registration_path)
     within "#new_user" do
       fill_in "Email", :with => @user1.email
-      fill_in "user_password", :with => @user1.password
-      fill_in "user_password_confirmation", :with => @user1.password
+      fill_in "user_password", :with => "111111"
+      fill_in "user_password_confirmation", :with => "111111"
       click_button "Sign up"
     end
-    # shouldn't this redirect to root_path??
-    # also :js => true gets stuck at sign Up button press :S
-    #current_path.should eq(root_path)
     current_path.should eq(root_path)
   end
 

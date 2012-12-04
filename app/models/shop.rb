@@ -5,12 +5,17 @@ class Shop < ActiveRecord::Base
   validates :name, :uniqueness => { :scope => [:latitude , :longitude] }
 
 
+  # make sure that the default chai_score value is set to 0 instead of nil when entered in DB
+
+
   def calculate_chai_score
       visits.average("wifi+power+atmosphere").to_f / 3
   end
 
 # checks for the shops chai rating and if it's nil changes it to zero
   def calculate_and_save_chai_score
+    # check if it's even possible for coffeeshop to have nil?
+    # could become just "update chai_score"
     score = calculate_chai_score
     score.nil? ? (self.chai_score = 0) : (self.chai_score = score)
     self.save

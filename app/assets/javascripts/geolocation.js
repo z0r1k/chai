@@ -34,10 +34,11 @@ var Geolocation = {
         map: map,
         icon: "http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=cafe%7C996600",
         title: data.businesses[i].name,
-        html: data.html_marker_info[i],
-        minWidth: '200',
+        html: data.html_marker_info[i], // taking an element from an array of rendered HTML - done in the create function in the shop controller
       });
-      
+
+      // "this" refers to the marker. the function that is executed on click,
+          // attaches the html content from the marker into the info window.
       google.maps.event.addListener(marker, 'click', function() {
         infowindow.setContent(this.html);
         infowindow.open(map,this);
