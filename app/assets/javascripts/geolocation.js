@@ -22,8 +22,7 @@ var Geolocation = {
     map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
     return map;
   },
-
-
+  
   shopListFromDB: function(event, data) {
     $('#map-native-results').html(data.html_content);
     var infowindow = new google.maps.InfoWindow();
@@ -35,7 +34,6 @@ var Geolocation = {
         icon: "http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=cafe%7C996600",
         title: data.businesses[i].name,
         html: data.html_marker_info[i],
-        minWidth: '200',
       });
       
       google.maps.event.addListener(marker, 'click', function() {
@@ -45,6 +43,32 @@ var Geolocation = {
     }
   },
 
+// function that sends an Ajaxs request to our rails sever and waits for a reply
+// on successful reply triggers a 'success' which causes the displaying of our query items
+  getGeoLocation: function() {
+    $('#find-shops button').attr("disabled", true);
+    $('#find-shops').fadeTo(500, 0.2);
+    $('body').addClass("loading");
+    navigator.geolocation.getCurrentPosition(function(position){
+      $.ajax({
+        type: 'post',
+        url: '/shops',
+        dataType: 'json',
+        data: {longitude: position.coords.longitude, latitude: position.coords.latitude},
+        success: function(data, status, xhr) {
+          $('#map-native-results').trigger('ajax:success', [data, status, xhr]);
+        },
+        error: function(xhr, status, error) {
+          $('#map-native-results').trigger('ajax:error', [xhr, status, error]);
+        },
+        complete: function(xhr, status) {
+          $('body').removeClass("loading");
+          $('#find-shops button').attr("disabled", false);
+          $('#find-shops').fadeTo(500, 1);
+        }
+      });
+    });
+  },
 
 // function to get the users current position based on geolocation
 // also adds a pin to the google map with a hover text that reads 'You're here
@@ -80,35 +104,8 @@ var Geolocation = {
         }
       });
     });
-  },
-
-
-// function that sends an Ajaxs request to our rails sever and waits for a reply
-// on successful reply triggers a 'success' which causes the displaying of our query items
-  getGeoLocation: function() {
-    $('#find-shops button').attr("disabled", true);
-    $('#find-shops').fadeTo(500, 0.2);
-    $('body').addClass("loading");
-    navigator.geolocation.getCurrentPosition(function(position){
-      $.ajax({
-        type: 'post',
-        url: '/shops',
-        dataType: 'json',
-        data: {longitude: position.coords.longitude, latitude: position.coords.latitude},
-        success: function(data, status, xhr) {
-          $('#map-native-results').trigger('ajax:success', [data, status, xhr]);
-        },
-        error: function(xhr, status, error) {
-          $('#map-native-results').trigger('ajax:error', [xhr, status, error]);
-        },
-        complete: function(xhr, status) {
-          $('body').removeClass("loading");
-          $('#find-shops button').attr("disabled", false);
-          $('#find-shops').fadeTo(500, 1);
-        }
-      });
-    });
   }
+
 };
 
 
