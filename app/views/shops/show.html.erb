@@ -1,1 +1,7 @@
 <%= render :partial => 'shop' %>
+
+<% if user_signed_in? %>
+  <%= render :partial => 'visits/form' %>
+<% else %>
+  <p>Please sign in to rate THIS shop</p>
+<% end -%>
