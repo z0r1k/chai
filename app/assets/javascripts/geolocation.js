@@ -4,14 +4,13 @@
 // providing data and populating the main page and google map
 var Geolocation = {
   init: function(currentPosition) {
-    if (currentPosition === undefined) {
-      var currentPosition = this.currentPosition()
-    }
-    else
+    // if (currentPosition === undefined) {
+    //   var currentPosition = this.currentPosition()
+    // }
+    // else
 
-    $('#find-shops').on('click', this.getGeoLocation);
     $('#map-native-results').on('ajax:success',this.shopListFromDB);
-    $('#searchRemoteResults').on('click', this.findRemoteResultsBySearch);
+    $('#find-shops').on('click', this.findRemoteResultsBySearch);
     this.currentPosition();
     this.sendCurrentPositionAndGetCoffeshopResults();
   },
@@ -95,11 +94,11 @@ var Geolocation = {
 },
 
 
-//<<<<<<< HEAD
+
   sendCurrentPositionAndGetCoffeshopResults: function() {
     navigator.geolocation.getCurrentPosition(function(paramCurrentPosition){
           Geolocation.sendPositionAndGetRemoteResults(paramCurrentPosition.coords.latitude, paramCurrentPosition.coords.longitude);
-      }); 
+      });
   },
 
   sendPositionAndGetRemoteResults: function(latitude, longitude){
@@ -130,22 +129,14 @@ var Geolocation = {
     navigator.geolocation.getCurrentPosition(function(position){
       $.ajax({
         type: 'post',
-        url: '/shops',
-//=======
-  // sendPositionAndGetNativeResults: function() {
-  //   navigator.geolocation.getCurrentPosition(function(position){
-  //     $.ajax({
-  //       type: 'post',
-  //       url: '/native_results',
-//>>>>>>> master
+        url: '/native_results',
         dataType: 'json',
         data: {longitude: position.coords.longitude, latitude: position.coords.latitude},
         success: function(data, status, xhr) {
           $('#map-native-results').trigger('ajax:success', [data, status, xhr]);
         },
         error: function(xhr, status, error) {
-//<<<<<<< HEAD
-          $('#map-native-results').trigger('ajax:error', [xhr, status, error]); 
+          $('#map-native-results').trigger('ajax:error', [xhr, status, error]);
         },
         complete: function(xhr, status) {
           $('body').removeClass("loading");
@@ -176,15 +167,6 @@ var Geolocation = {
         alert("Geocode was not successful for the following reason: " + status);
       }
     });
-// =======
-//           $('#map-native-results').trigger('ajax:error', [xhr, status, error]);
-//         },
-//         complete: function(xhr, status) {
-//           $('#map-native-results').trigger('ajax:complete', [xhr, status]);
-//         }
-//       });
-//     });
-// >>>>>>> master
   }
 
 };
