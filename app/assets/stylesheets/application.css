@@ -31,7 +31,11 @@
 }
 
 .info-window #info-window-address {
-  float: left;
+  float:left;
+}
+
+.info-window #info-window-image {
+  float:right;
 }
 
 .info-window #info-window-image {
@@ -39,7 +43,7 @@
 }
 
 #map_canvas {
-  height: 300px;
+  height: 350px;
   width: 100%;
 }
 
@@ -65,7 +69,7 @@ h2 {
 #logo a img{ }
 
 .signed_in_blue_links{
-  margin-top: 70px;
+  padding: 34px;
 }
 
 #header_action_box {
@@ -86,6 +90,7 @@ h2 {
 }
 
 #header_action_box li a {
+    display:block;
     position: relative;
     margin-top: 30px;
 }
@@ -181,7 +186,7 @@ h2 {
     height:     100%;
     width:      100%;
     background: rgba( 255, 255, 255, .8 )
-                url('vegeta.gif')
+                url('coffee-cup-animated_1.gif')
                 50% 50%
                 no-repeat;
 }

@@ -6,7 +6,9 @@ class ShopsController < ApplicationController
 
   def native_results
     @shops = Shop.fetch_results_by_location(params)
-    #render :json => { :html_content => render_to_string('show', :layout => false), :businesses => @shops }
+    # checks for the results from the database and calls 'create' when less than 5
+    create if @shops.length < 5
+    
     @markers_info = []
     @shops.each do |shop|
       @markers_info << render_to_string(:partial => 'marker_info', :layout => false, :object => shop)
@@ -25,7 +27,6 @@ class ShopsController < ApplicationController
 
     @shops = Shop.fetch_results_by_location(params)
 
-    if @shops.length <= 10 #if not enough search results in the DB
       #sends a search query to Yelp via our YelpHelper module
       #check if and where this is being used, if at all
       @search = YelpHelper.query("#{params[:latitude]},#{params[:longitude]}")
@@ -37,7 +38,6 @@ class ShopsController < ApplicationController
       @results[:businesses].each  do |shop|
         Shop.update_or_create_by_name_and_latitude_and_longitude(shop.except(:distance, :review_count))
       end
-    end
 
     @markers_info = []
     @shops.each do |shop|
