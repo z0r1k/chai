@@ -28,7 +28,6 @@ var Geolocation = {
     return map;
   },
 
-
   shopListFromDB: function(event, data) {
     $('#map-native-results').html(data.html_content);
     var infowindow = new google.maps.InfoWindow();
@@ -39,10 +38,11 @@ var Geolocation = {
         map: map,
         icon: "http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=cafe%7C996600",
         title: data.businesses[i].name,
-        html: data.html_marker_info[i],
-        // minWidth: '200',
+        html: data.html_marker_info[i], // taking an element from an array of rendered HTML - done in the create function in the shop controller
       });
-      
+
+      // "this" refers to the marker. the function that is executed on click,
+          // attaches the html content from the marker into the info window.
       google.maps.event.addListener(marker, 'click', function() {
         infowindow.setContent(this.html);
         infowindow.open(map,this);
@@ -50,6 +50,32 @@ var Geolocation = {
     }
   },
 
+// function that sends an Ajaxs request to our rails sever and waits for a reply
+// on successful reply triggers a 'success' which causes the displaying of our query items
+  getGeoLocation: function() {
+    $('#find-shops button').attr("disabled", true);
+    $('#find-shops').fadeTo(500, 0.2);
+    $('body').addClass("loading");
+    navigator.geolocation.getCurrentPosition(function(position){
+      $.ajax({
+        type: 'post',
+        url: '/shops',
+        dataType: 'json',
+        data: {longitude: position.coords.longitude, latitude: position.coords.latitude},
+        success: function(data, status, xhr) {
+          $('#map-native-results').trigger('ajax:success', [data, status, xhr]);
+        },
+        error: function(xhr, status, error) {
+          $('#map-native-results').trigger('ajax:error', [xhr, status, error]);
+        },
+        complete: function(xhr, status) {
+          $('body').removeClass("loading");
+          $('#find-shops button').attr("disabled", false);
+          $('#find-shops').fadeTo(500, 1);
+        }
+      });
+    });
+  },
 
 
 
@@ -69,6 +95,7 @@ var Geolocation = {
 },
 
 
+//<<<<<<< HEAD
   sendCurrentPositionAndGetCoffeshopResults: function() {
     navigator.geolocation.getCurrentPosition(function(paramCurrentPosition){
           Geolocation.sendPositionAndGetRemoteResults(paramCurrentPosition.coords.latitude, paramCurrentPosition.coords.longitude);
@@ -104,12 +131,20 @@ var Geolocation = {
       $.ajax({
         type: 'post',
         url: '/shops',
+//=======
+  // sendPositionAndGetNativeResults: function() {
+  //   navigator.geolocation.getCurrentPosition(function(position){
+  //     $.ajax({
+  //       type: 'post',
+  //       url: '/native_results',
+//>>>>>>> master
         dataType: 'json',
         data: {longitude: position.coords.longitude, latitude: position.coords.latitude},
         success: function(data, status, xhr) {
           $('#map-native-results').trigger('ajax:success', [data, status, xhr]);
         },
         error: function(xhr, status, error) {
+//<<<<<<< HEAD
           $('#map-native-results').trigger('ajax:error', [xhr, status, error]); 
         },
         complete: function(xhr, status) {
@@ -141,7 +176,17 @@ var Geolocation = {
         alert("Geocode was not successful for the following reason: " + status);
       }
     });
+// =======
+//           $('#map-native-results').trigger('ajax:error', [xhr, status, error]);
+//         },
+//         complete: function(xhr, status) {
+//           $('#map-native-results').trigger('ajax:complete', [xhr, status]);
+//         }
+//       });
+//     });
+// >>>>>>> master
   }
+
 };
 
 // document ready wrapper for our Geolocation object

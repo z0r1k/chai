@@ -1,8 +1,8 @@
 class ShopsController < ApplicationController
 
-  # def index
-  #   @shops = Shop.all
-  # end
+  def index
+    @shops = Shop.all
+  end
 
   def native_results
     @shops = Shop.fetch_results_by_location(params)
@@ -13,35 +13,37 @@ class ShopsController < ApplicationController
     @shops.each do |shop|
       @markers_info << render_to_string(:partial => 'marker_info', :layout => false, :object => shop)
     end
-    render :json => { :html_content => render_to_string('show', :layout => false),
+    render :json => { :html_content => render_to_string('list_results', :layout => false),
                       :businesses => @shops,
                       :html_marker_info => @markers_info }
   end
 
+  def show
+    @shop = Shop.find(params[:id])
+  end
+
   def create
-    #sends a search query to Yelp via our YelpHelper module
-    #check if and where this is being used, if at all
-    @search = YelpHelper.query("#{params[:latitude]},#{params[:longitude]}")
-    logger.info @search
 
-    # gets the results from our YelpHelper module query
-    @results = YelpHelper.search("#{params[:latitude]},#{params[:longitude]}")
-    
-    logger.info '--------------'
 
-    @results[:businesses].each  do |shop|
-      logger.info shop
-      Shop.update_or_create_by_name_and_latitude_and_longitude(shop.except(:distance, :review_count))
-    end
-    
-    logger.info '--------------'
-    
     @shops = Shop.fetch_results_by_location(params)
+
+      #sends a search query to Yelp via our YelpHelper module
+      #check if and where this is being used, if at all
+      @search = YelpHelper.query("#{params[:latitude]},#{params[:longitude]}")
+      logger.info @search
+
+      # gets the results from our YelpHelper module query
+      @results = YelpHelper.search("#{params[:latitude]},#{params[:longitude]}")
+
+      @results[:businesses].each  do |shop|
+        Shop.update_or_create_by_name_and_latitude_and_longitude(shop.except(:distance, :review_count))
+      end
+
     @markers_info = []
     @shops.each do |shop|
       @markers_info << render_to_string(:partial => 'marker_info', :layout => false, :object => shop)
     end
-    render :json => { :html_content => render_to_string('show', :layout => false),
+    render :json => { :html_content => render_to_string('list_results', :layout => false),
                       :businesses => @shops,
                       :html_marker_info => @markers_info }
   end

@@ -24,19 +24,22 @@
 /*************************************/
 /* GENERAL STYLING                   */
 /*************************************/
+
 .info-window {
   width: 275px;
   height: 100px;
 }
 
 .info-window #info-window-address {
-  text-align: left;
   float:left;
-  padding-right: 5px;
 }
 
 .info-window #info-window-image {
   float:right;
+}
+
+.info-window #info-window-image {
+  float: right;
 }
 
 #map_canvas {
