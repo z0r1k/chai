@@ -8,7 +8,6 @@
     <tr>
       <th><%= model_class.human_attribute_name( :name ) %></th>
       <th><%= model_class.human_attribute_name( :rating ) %></th>
-      <!-- <th><#%=t '.actions', :default => t("helpers.actions") %></th> -->
     </tr>
   </thead>
   <tbody>
@@ -20,27 +19,13 @@
     <% @shops.sort_by! { |shop| -1 * shop.chai_score } %>
 
     <% @shops.each do |shop| %>
-      <tr>
+      <tr class='shop-info-row' >
         <td><%= link_to( shop.name, shop_path( shop ) ) %></td>
         <td><%= shop.chai_score.round( 1 ) %></td>
         <td><%= link_to "Rate", shop_path( shop ) %></td>
-
-       <!-- <td>
-           <#%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_shop_path(shop), :class => 'btn btn-mini' %>
-           <#%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      shop_path(shop),
-                      :method => :delete,
-                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td> -->
       </tr>
     <% end %>
   </tbody>
 </table>
 </div>
-
-<!-- <#%= link_to t('.new', :default => t("helpers.links.new")),
-            new_shop_path,
-            :class => 'btn btn-primary' %> -->
 

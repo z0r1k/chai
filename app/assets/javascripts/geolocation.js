@@ -11,12 +11,15 @@ var Geolocation = {
 
     $('#map-native-results').on('ajax:success',this.shopListFromDB);
     $('#find-shops').on('click', this.findRemoteResultsBySearch);
+    $('.shop-info-row').on('click', this.doSomething);
     this.currentPosition();
     this.sendCurrentPositionAndGetCoffeshopResults();
   },
 
-
-// function that creates the map and displays it on our main page
+  doSomething: function() {
+    alert(this)
+  },
+  // function that creates the map and displays it on our main page
   createMap: function(lngLat) {
     var mapOptions = {
       zoom: 16,
