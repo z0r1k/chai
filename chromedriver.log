@@ -1,5 +1,5 @@
 [0.000][INFO]:      ChromeDriver 21.0.1180.4 /usr/local/bin/chromedriver
-[0.224][FINE]:      Initializing session with capabilities {
+[0.215][FINE]:      Initializing session with capabilities {
    "browserName": "chrome",
    "chrome.detach": true,
    "chromeOptions": {
@@ -14,11 +14,11 @@
    "version": ""
 }
 
-[0.225][INFO]:      Using named testing interface
-[1.083][INFO]:      Connected to Chrome successfully. Version: 23.0.1271.95
-[1.123][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e)
-[1.123][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
+[0.216][INFO]:      Using named testing interface
+[1.072][INFO]:      Connected to Chrome successfully. Version: 23.0.1271.95
+[1.104][FINE]:      Command received (/session/55555f6801d6463b367917cfe2be4e54)
+[1.104][FINE]:      Command finished (/session/55555f6801d6463b367917cfe2be4e54) with response {
+   "sessionId": "55555f6801d6463b367917cfe2be4e54",
    "status": 0,
    "value": {
       "acceptSslCerts": false,
@@ -41,877 +41,93 @@
    }
 }
 
-[1.125][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with params {
-   "url": "http://127.0.0.1:55787/contact"
+[1.107][FINE]:      Command received (/session/55555f6801d6463b367917cfe2be4e54/url) with params {
+   "url": "http://127.0.0.1:58850/shops/1"
 }
 
-[1.125][FINER]:     Waiting for all views to stop loading...
-[1.125][FINER]:     Done waiting for all views to stop loading
-[1.957][FINER]:     Waiting for all views to stop loading...
-[1.996][FINER]:     Done waiting for all views to stop loading
-[1.996][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
+[1.108][FINER]:     Waiting for all views to stop loading...
+[1.110][FINER]:     Done waiting for all views to stop loading
+[2.744][FINER]:     Waiting for all views to stop loading...
+[2.778][FINER]:     Done waiting for all views to stop loading
+[2.778][FINE]:      Command finished (/session/55555f6801d6463b367917cfe2be4e54/url) with response {
+   "sessionId": "55555f6801d6463b367917cfe2be4e54",
    "status": 0,
    "value": {
 
    }
 }
 
-[1.998][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
+[2.785][FINE]:      Command received (/session/55555f6801d6463b367917cfe2be4e54/elements) with params {
    "using": "xpath",
-   "value": ".//a[./@href][(((./@id = 'Chai' or contains(normalize-space(string(.)), 'Chai')) or contains(./@t..."
+   "value": ".//a[./@href][(((./@id = 'Look this shop up on Yelp' or contains(normalize-space(string(.)), 'Loo..."
 }
 
-[1.998][FINER]:     Waiting for all views to stop loading...
-[1.999][FINER]:     Done waiting for all views to stop loading
-[2.015][FINER]:     Waiting for all views to stop loading...
-[2.016][FINER]:     Done waiting for all views to stop loading
-[2.016][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
+[2.785][FINER]:     Waiting for all views to stop loading...
+[2.786][FINER]:     Done waiting for all views to stop loading
+[2.803][FINER]:     Waiting for all views to stop loading...
+[2.804][FINER]:     Done waiting for all views to stop loading
+[2.804][FINE]:      Command finished (/session/55555f6801d6463b367917cfe2be4e54/elements) with response {
+   "sessionId": "55555f6801d6463b367917cfe2be4e54",
    "status": 0,
    "value": [ {
-      "ELEMENT": ":wdc:1354583531497"
+      "ELEMENT": ":wdc:1354588620143"
    } ]
 }
 
-[2.023][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583531497/click) with params {
+[2.850][FINE]:      Command received (/session/55555f6801d6463b367917cfe2be4e54/element/:wdc:1354588620143/click) with params {
 
-}
-
-[2.023][FINER]:     Waiting for all views to stop loading...
-[2.023][FINER]:     Done waiting for all views to stop loading
-[2.057][WARNING]:   Element's descendant would receive the click. Consider clicking the descendant instead. Descendant: <img alt="Chai" src="/assets/Chai.png">
-[2.113][FINER]:     Waiting for all views to stop loading...
-[2.345][FINER]:     Done waiting for all views to stop loading
-[2.345][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583531497/click) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": {
-
-   }
-}
-
-[2.347][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url)
-[2.347][FINER]:     Waiting for all views to stop loading...
-[2.363][FINER]:     Done waiting for all views to stop loading
-[2.524][FINER]:     Waiting for all views to stop loading...
-[2.556][FINER]:     Done waiting for all views to stop loading
-[2.556][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "http://127.0.0.1:55787/"
-}
-
-[2.625][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": "/html"
-}
-
-[2.625][FINER]:     Waiting for all views to stop loading...
-[2.643][FINER]:     Done waiting for all views to stop loading
-[2.689][FINER]:     Waiting for all views to stop loading...
-[2.690][FINER]:     Done waiting for all views to stop loading
-[2.690][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583532155"
-   } ]
-}
-
-[2.692][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583532155/text)
-[2.692][FINER]:     Waiting for all views to stop loading...
-[2.722][FINER]:     Done waiting for all views to stop loading
-[2.838][FINER]:     Waiting for all views to stop loading...
-[2.839][FINER]:     Done waiting for all views to stop loading
-[2.839][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583532155/text) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "Sign in\nSign up!\nFind a nice place to work\nMap data \u00A92012 Google, Sanborn - Terms of Use\nReport ..."
-}
-
-[2.850][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": "/html"
 }
 
 [2.850][FINER]:     Waiting for all views to stop loading...
-[2.856][FINER]:     Done waiting for all views to stop loading
-[2.920][FINER]:     Waiting for all views to stop loading...
-[2.922][FINER]:     Done waiting for all views to stop loading
-[2.922][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583532155"
-   } ]
-}
-
-[2.923][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583532155/text)
-[2.923][FINER]:     Waiting for all views to stop loading...
-[2.953][FINER]:     Done waiting for all views to stop loading
-[3.054][FINER]:     Waiting for all views to stop loading...
-[3.054][FINER]:     Done waiting for all views to stop loading
-[3.054][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583532155/text) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "Sign in\nSign up!\nFind a nice place to work\nMap data \u00A92012 Google, Sanborn - Terms of Use\nReport ..."
-}
-
-[3.056][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": "/html"
-}
-
-[3.056][FINER]:     Waiting for all views to stop loading...
-[3.087][FINER]:     Done waiting for all views to stop loading
-[3.154][FINER]:     Waiting for all views to stop loading...
-[3.154][FINER]:     Done waiting for all views to stop loading
-[3.154][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583532155"
-   } ]
-}
-
-[3.156][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583532155/text)
-[3.156][FINER]:     Waiting for all views to stop loading...
-[3.187][FINER]:     Done waiting for all views to stop loading
-[3.287][FINER]:     Waiting for all views to stop loading...
-[3.287][FINER]:     Done waiting for all views to stop loading
-[3.287][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583532155/text) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "Sign in\nSign up!\nFind a nice place to work\nMap data \u00A92012 Google, Sanborn - Terms of Use\nReport ..."
-}
-
-[3.291][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/cookie)
-[3.291][FINER]:     Waiting for all views to stop loading...
-[3.320][FINER]:     Done waiting for all views to stop loading
-[3.322][FINER]:     Waiting for all views to stop loading...
-[3.322][FINER]:     Done waiting for all views to stop loading
-[3.322][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/cookie) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
+[2.851][FINER]:     Done waiting for all views to stop loading
+[2.915][FINER]:     Waiting for all views to stop loading...
+[4.182][FINER]:     Done waiting for all views to stop loading
+[4.182][FINE]:      Command finished (/session/55555f6801d6463b367917cfe2be4e54/element/:wdc:1354588620143/click) with response {
+   "sessionId": "55555f6801d6463b367917cfe2be4e54",
    "status": 0,
    "value": {
 
    }
 }
 
-[3.324][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with params {
-   "url": "about:blank"
-}
-
-[3.324][FINER]:     Waiting for all views to stop loading...
-[3.364][FINER]:     Done waiting for all views to stop loading
-[3.679][FINER]:     Waiting for all views to stop loading...
-[3.711][FINER]:     Done waiting for all views to stop loading
-[3.711][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": {
-
-   }
-}
-
-[3.715][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with params {
-   "url": "http://127.0.0.1:55787/about"
-}
-
-[3.715][FINER]:     Waiting for all views to stop loading...
-[3.715][FINER]:     Done waiting for all views to stop loading
-[4.346][FINER]:     Waiting for all views to stop loading...
+[4.184][FINE]:      Command received (/session/55555f6801d6463b367917cfe2be4e54/url)
+[4.184][FINER]:     Waiting for all views to stop loading...
+[4.188][FINER]:     Done waiting for all views to stop loading
+[4.263][FINER]:     Waiting for all views to stop loading...
 [4.396][FINER]:     Done waiting for all views to stop loading
-[4.396][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
+[4.396][FINE]:      Command finished (/session/55555f6801d6463b367917cfe2be4e54/url) with response {
+   "sessionId": "55555f6801d6463b367917cfe2be4e54",
+   "status": 0,
+   "value": "http://devbootcamp.com/"
+}
+
+[4.402][FINE]:      Command received (/session/55555f6801d6463b367917cfe2be4e54/cookie)
+[4.402][FINER]:     Waiting for all views to stop loading...
+[4.411][FINER]:     Done waiting for all views to stop loading
+[4.414][FINER]:     Waiting for all views to stop loading...
+[4.414][FINER]:     Done waiting for all views to stop loading
+[4.414][FINE]:      Command finished (/session/55555f6801d6463b367917cfe2be4e54/cookie) with response {
+   "sessionId": "55555f6801d6463b367917cfe2be4e54",
    "status": 0,
    "value": {
 
    }
 }
 
-[4.397][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": ".//a[./@href][(((./@id = 'Home' or contains(normalize-space(string(.)), 'Home')) or contains(./@t..."
-}
-
-[4.398][FINER]:     Waiting for all views to stop loading...
-[4.398][FINER]:     Done waiting for all views to stop loading
-[4.414][FINER]:     Waiting for all views to stop loading...
-[4.415][FINER]:     Done waiting for all views to stop loading
-[4.415][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583533896"
-   } ]
-}
-
-[4.416][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583533896/click) with params {
-
+[4.416][FINE]:      Command received (/session/55555f6801d6463b367917cfe2be4e54/url) with params {
+   "url": "about:blank"
 }
 
 [4.416][FINER]:     Waiting for all views to stop loading...
 [4.416][FINER]:     Done waiting for all views to stop loading
-[4.467][FINER]:     Waiting for all views to stop loading...
-[4.891][FINER]:     Done waiting for all views to stop loading
-[4.891][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583533896/click) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
+[4.717][FINER]:     Waiting for all views to stop loading...
+[4.743][FINER]:     Done waiting for all views to stop loading
+[4.743][FINE]:      Command finished (/session/55555f6801d6463b367917cfe2be4e54/url) with response {
+   "sessionId": "55555f6801d6463b367917cfe2be4e54",
    "status": 0,
    "value": {
 
    }
 }
 
-[4.895][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url)
-[4.895][FINER]:     Waiting for all views to stop loading...
-[4.924][FINER]:     Done waiting for all views to stop loading
-[4.971][FINER]:     Waiting for all views to stop loading...
-[4.971][FINER]:     Done waiting for all views to stop loading
-[4.971][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "http://127.0.0.1:55787/"
-}
-
-[4.975][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": "/html"
-}
-
-[4.975][FINER]:     Waiting for all views to stop loading...
-[5.004][FINER]:     Done waiting for all views to stop loading
-[5.070][FINER]:     Waiting for all views to stop loading...
-[5.071][FINER]:     Done waiting for all views to stop loading
-[5.071][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583534523"
-   } ]
-}
-
-[5.073][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583534523/text)
-[5.073][FINER]:     Waiting for all views to stop loading...
-[5.104][FINER]:     Done waiting for all views to stop loading
-[5.206][FINER]:     Waiting for all views to stop loading...
-[5.207][FINER]:     Done waiting for all views to stop loading
-[5.207][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583534523/text) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "Sign in\nSign up!\nFind a nice place to work\nMap data \u00A92012 Google, Sanborn - Terms of Use\nReport ..."
-}
-
-[5.210][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": "/html"
-}
-
-[5.210][FINER]:     Waiting for all views to stop loading...
-[5.237][FINER]:     Done waiting for all views to stop loading
-[5.304][FINER]:     Waiting for all views to stop loading...
-[5.304][FINER]:     Done waiting for all views to stop loading
-[5.304][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583534523"
-   } ]
-}
-
-[5.306][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583534523/text)
-[5.306][FINER]:     Waiting for all views to stop loading...
-[5.337][FINER]:     Done waiting for all views to stop loading
-[5.438][FINER]:     Waiting for all views to stop loading...
-[5.470][FINER]:     Done waiting for all views to stop loading
-[5.470][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583534523/text) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "Sign in\nSign up!\nFind a nice place to work\nMap data \u00A92012 Google, Sanborn - Terms of Use\nReport ..."
-}
-
-[5.473][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": "/html"
-}
-
-[5.473][FINER]:     Waiting for all views to stop loading...
-[5.504][FINER]:     Done waiting for all views to stop loading
-[5.570][FINER]:     Waiting for all views to stop loading...
-[5.570][FINER]:     Done waiting for all views to stop loading
-[5.570][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583534523"
-   } ]
-}
-
-[5.572][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583534523/text)
-[5.572][FINER]:     Waiting for all views to stop loading...
-[5.572][FINER]:     Done waiting for all views to stop loading
-[5.642][FINER]:     Waiting for all views to stop loading...
-[5.642][FINER]:     Done waiting for all views to stop loading
-[5.642][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583534523/text) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "Sign in\nSign up!\nFind a nice place to work\nMap data \u00A92012 Google, Sanborn - Terms of Use\nReport ..."
-}
-
-[5.644][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/cookie)
-[5.644][FINER]:     Waiting for all views to stop loading...
-[5.645][FINER]:     Done waiting for all views to stop loading
-[5.646][FINER]:     Waiting for all views to stop loading...
-[5.647][FINER]:     Done waiting for all views to stop loading
-[5.647][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/cookie) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": {
-
-   }
-}
-
-[5.648][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with params {
-   "url": "about:blank"
-}
-
-[5.648][FINER]:     Waiting for all views to stop loading...
-[5.648][FINER]:     Done waiting for all views to stop loading
-[5.979][FINER]:     Waiting for all views to stop loading...
-[6.013][FINER]:     Done waiting for all views to stop loading
-[6.013][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": {
-
-   }
-}
-
-[6.017][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with params {
-   "url": "http://127.0.0.1:55787/"
-}
-
-[6.017][FINER]:     Waiting for all views to stop loading...
-[6.017][FINER]:     Done waiting for all views to stop loading
-[6.638][FINER]:     Waiting for all views to stop loading...
-[6.665][FINER]:     Done waiting for all views to stop loading
-[6.665][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": {
-
-   }
-}
-
-[6.667][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": ".//a[./@href][(((./@id = 'Chai' or contains(normalize-space(string(.)), 'Chai')) or contains(./@t..."
-}
-
-[6.667][FINER]:     Waiting for all views to stop loading...
-[6.668][FINER]:     Done waiting for all views to stop loading
-[6.789][FINER]:     Waiting for all views to stop loading...
-[6.822][FINER]:     Done waiting for all views to stop loading
-[6.822][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583536200"
-   } ]
-}
-
-[6.823][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583536200/click) with params {
-
-}
-
-[6.823][FINER]:     Waiting for all views to stop loading...
-[6.853][FINER]:     Done waiting for all views to stop loading
-[7.120][WARNING]:   Element's descendant would receive the click. Consider clicking the descendant instead. Descendant: <img alt="Chai" src="/assets/Chai.png">
-[7.225][FINER]:     Waiting for all views to stop loading...
-[7.318][FINER]:     Done waiting for all views to stop loading
-[7.318][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583536200/click) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": {
-
-   }
-}
-
-[7.329][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url)
-[7.329][FINER]:     Waiting for all views to stop loading...
-[7.392][FINER]:     Done waiting for all views to stop loading
-[7.507][FINER]:     Waiting for all views to stop loading...
-[7.554][FINER]:     Done waiting for all views to stop loading
-[7.554][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "http://127.0.0.1:55787/"
-}
-
-[7.558][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": "/html"
-}
-
-[7.558][FINER]:     Waiting for all views to stop loading...
-[7.604][FINER]:     Done waiting for all views to stop loading
-[7.637][FINER]:     Waiting for all views to stop loading...
-[7.637][FINER]:     Done waiting for all views to stop loading
-[7.637][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583537102"
-   } ]
-}
-
-[7.640][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583537102/text)
-[7.640][FINER]:     Waiting for all views to stop loading...
-[7.670][FINER]:     Done waiting for all views to stop loading
-[7.784][FINER]:     Waiting for all views to stop loading...
-[7.784][FINER]:     Done waiting for all views to stop loading
-[7.784][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583537102/text) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "Sign in\nSign up!\nFind a nice place to work\nMap data \u00A92012 Google, Sanborn - Terms of Use\nReport ..."
-}
-
-[7.786][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": "/html"
-}
-
-[7.786][FINER]:     Waiting for all views to stop loading...
-[7.786][FINER]:     Done waiting for all views to stop loading
-[7.804][FINER]:     Waiting for all views to stop loading...
-[7.805][FINER]:     Done waiting for all views to stop loading
-[7.805][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583537102"
-   } ]
-}
-
-[7.806][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583537102/text)
-[7.807][FINER]:     Waiting for all views to stop loading...
-[7.837][FINER]:     Done waiting for all views to stop loading
-[7.937][FINER]:     Waiting for all views to stop loading...
-[7.937][FINER]:     Done waiting for all views to stop loading
-[7.937][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583537102/text) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "Sign in\nSign up!\nFind a nice place to work\nMap data \u00A92012 Google, Sanborn - Terms of Use\nReport ..."
-}
-
-[7.939][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": "/html"
-}
-
-[7.939][FINER]:     Waiting for all views to stop loading...
-[7.970][FINER]:     Done waiting for all views to stop loading
-[8.037][FINER]:     Waiting for all views to stop loading...
-[8.037][FINER]:     Done waiting for all views to stop loading
-[8.037][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583537102"
-   } ]
-}
-
-[8.039][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583537102/text)
-[8.039][FINER]:     Waiting for all views to stop loading...
-[8.070][FINER]:     Done waiting for all views to stop loading
-[8.170][FINER]:     Waiting for all views to stop loading...
-[8.171][FINER]:     Done waiting for all views to stop loading
-[8.171][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583537102/text) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "Sign in\nSign up!\nFind a nice place to work\nMap data \u00A92012 Google, Sanborn - Terms of Use\nReport ..."
-}
-
-[8.174][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/cookie)
-[8.174][FINER]:     Waiting for all views to stop loading...
-[8.204][FINER]:     Done waiting for all views to stop loading
-[8.248][FINER]:     Waiting for all views to stop loading...
-[8.248][FINER]:     Done waiting for all views to stop loading
-[8.248][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/cookie) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": {
-
-   }
-}
-
-[8.250][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with params {
-   "url": "about:blank"
-}
-
-[8.250][FINER]:     Waiting for all views to stop loading...
-[8.287][FINER]:     Done waiting for all views to stop loading
-[8.571][FINER]:     Waiting for all views to stop loading...
-[8.588][FINER]:     Done waiting for all views to stop loading
-[8.588][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": {
-
-   }
-}
-
-[8.676][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with params {
-   "url": "http://127.0.0.1:55787/contact"
-}
-
-[8.676][FINER]:     Waiting for all views to stop loading...
-[8.677][FINER]:     Done waiting for all views to stop loading
-[9.295][FINER]:     Waiting for all views to stop loading...
-[9.327][FINER]:     Done waiting for all views to stop loading
-[9.327][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": {
-
-   }
-}
-
-[9.329][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": ".//a[./@href][(((./@id = 'Home' or contains(normalize-space(string(.)), 'Home')) or contains(./@t..."
-}
-
-[9.329][FINER]:     Waiting for all views to stop loading...
-[9.329][FINER]:     Done waiting for all views to stop loading
-[9.342][FINER]:     Waiting for all views to stop loading...
-[9.343][FINER]:     Done waiting for all views to stop loading
-[9.343][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583538824"
-   } ]
-}
-
-[9.344][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583538824/click) with params {
-
-}
-
-[9.344][FINER]:     Waiting for all views to stop loading...
-[9.345][FINER]:     Done waiting for all views to stop loading
-[9.398][FINER]:     Waiting for all views to stop loading...
-[9.790][FINER]:     Done waiting for all views to stop loading
-[9.790][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583538824/click) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": {
-
-   }
-}
-
-[9.793][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url)
-[9.793][FINER]:     Waiting for all views to stop loading...
-[9.825][FINER]:     Done waiting for all views to stop loading
-[9.854][FINER]:     Waiting for all views to stop loading...
-[9.856][FINER]:     Done waiting for all views to stop loading
-[9.856][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "http://127.0.0.1:55787/"
-}
-
-[9.860][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": "/html"
-}
-
-[9.860][FINER]:     Waiting for all views to stop loading...
-[9.889][FINER]:     Done waiting for all views to stop loading
-[9.953][FINER]:     Waiting for all views to stop loading...
-[9.954][FINER]:     Done waiting for all views to stop loading
-[9.954][FINE]:      Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583539410"
-   } ]
-}
-
-[9.956][FINE]:      Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583539410/text)
-[9.956][FINER]:     Waiting for all views to stop loading...
-[9.987][FINER]:     Done waiting for all views to stop loading
-[10.075][FINER]:    Waiting for all views to stop loading...
-[10.075][FINER]:    Done waiting for all views to stop loading
-[10.075][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583539410/text) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "Sign in\nSign up!\nFind a nice place to work\nMap data \u00A92012 Google, Sanborn - Terms of Use\nReport ..."
-}
-
-[10.079][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": "/html"
-}
-
-[10.079][FINER]:    Waiting for all views to stop loading...
-[10.088][FINER]:    Done waiting for all views to stop loading
-[10.154][FINER]:    Waiting for all views to stop loading...
-[10.154][FINER]:    Done waiting for all views to stop loading
-[10.154][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583539410"
-   } ]
-}
-
-[10.156][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583539410/text)
-[10.156][FINER]:    Waiting for all views to stop loading...
-[10.187][FINER]:    Done waiting for all views to stop loading
-[10.288][FINER]:    Waiting for all views to stop loading...
-[10.320][FINER]:    Done waiting for all views to stop loading
-[10.320][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583539410/text) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "Sign in\nSign up!\nFind a nice place to work\nMap data \u00A92012 Google, Sanborn - Terms of Use\nReport ..."
-}
-
-[10.323][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": "/html"
-}
-
-[10.323][FINER]:    Waiting for all views to stop loading...
-[10.382][FINER]:    Done waiting for all views to stop loading
-[10.587][FINER]:    Waiting for all views to stop loading...
-[10.588][FINER]:    Done waiting for all views to stop loading
-[10.588][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583539410"
-   } ]
-}
-
-[10.589][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583539410/text)
-[10.590][FINER]:    Waiting for all views to stop loading...
-[10.590][FINER]:    Done waiting for all views to stop loading
-[10.697][FINER]:    Waiting for all views to stop loading...
-[10.697][FINER]:    Done waiting for all views to stop loading
-[10.697][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583539410/text) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "Sign in\nSign up!\nFind a nice place to work\nMap data \u00A92012 Google, Sanborn - Terms of Use\nReport ..."
-}
-
-[10.699][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/cookie)
-[10.699][FINER]:    Waiting for all views to stop loading...
-[10.699][FINER]:    Done waiting for all views to stop loading
-[10.701][FINER]:    Waiting for all views to stop loading...
-[10.701][FINER]:    Done waiting for all views to stop loading
-[10.701][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/cookie) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": {
-
-   }
-}
-
-[10.702][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with params {
-   "url": "about:blank"
-}
-
-[10.702][FINER]:    Waiting for all views to stop loading...
-[10.703][FINER]:    Done waiting for all views to stop loading
-[10.958][FINER]:    Waiting for all views to stop loading...
-[10.983][FINER]:    Done waiting for all views to stop loading
-[10.983][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": {
-
-   }
-}
-
-[10.986][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with params {
-   "url": "http://127.0.0.1:55787/faq"
-}
-
-[10.987][FINER]:    Waiting for all views to stop loading...
-[10.987][FINER]:    Done waiting for all views to stop loading
-[11.717][FINER]:    Waiting for all views to stop loading...
-[11.750][FINER]:    Done waiting for all views to stop loading
-[11.750][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": {
-
-   }
-}
-
-[11.751][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": ".//a[./@href][(((./@id = 'Chai' or contains(normalize-space(string(.)), 'Chai')) or contains(./@t..."
-}
-
-[11.751][FINER]:    Waiting for all views to stop loading...
-[11.752][FINER]:    Done waiting for all views to stop loading
-[11.766][FINER]:    Waiting for all views to stop loading...
-[11.767][FINER]:    Done waiting for all views to stop loading
-[11.767][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583541248"
-   } ]
-}
-
-[11.768][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583541248/click) with params {
-
-}
-
-[11.768][FINER]:    Waiting for all views to stop loading...
-[11.768][FINER]:    Done waiting for all views to stop loading
-[11.799][WARNING]:  Element's descendant would receive the click. Consider clicking the descendant instead. Descendant: <img alt="Chai" src="/assets/Chai.png">
-[11.817][FINER]:    Waiting for all views to stop loading...
-[12.201][FINER]:    Done waiting for all views to stop loading
-[12.201][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583541248/click) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": {
-
-   }
-}
-
-[12.207][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url)
-[12.207][FINER]:    Waiting for all views to stop loading...
-[12.212][FINER]:    Done waiting for all views to stop loading
-[12.248][FINER]:    Waiting for all views to stop loading...
-[12.248][FINER]:    Done waiting for all views to stop loading
-[12.248][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "http://127.0.0.1:55787/"
-}
-
-[12.251][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": "/html"
-}
-
-[12.251][FINER]:    Waiting for all views to stop loading...
-[12.253][FINER]:    Done waiting for all views to stop loading
-[12.286][FINER]:    Waiting for all views to stop loading...
-[12.286][FINER]:    Done waiting for all views to stop loading
-[12.286][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583541765"
-   } ]
-}
-
-[12.287][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583541765/text)
-[12.287][FINER]:    Waiting for all views to stop loading...
-[12.288][FINER]:    Done waiting for all views to stop loading
-[12.381][FINER]:    Waiting for all views to stop loading...
-[12.381][FINER]:    Done waiting for all views to stop loading
-[12.381][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583541765/text) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "Sign in\nSign up!\nFind a nice place to work\nMap data \u00A92012 Google, Sanborn - Terms of Use\nReport ..."
-}
-
-[12.383][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": "/html"
-}
-
-[12.383][FINER]:    Waiting for all views to stop loading...
-[12.384][FINER]:    Done waiting for all views to stop loading
-[12.409][FINER]:    Waiting for all views to stop loading...
-[12.418][FINER]:    Done waiting for all views to stop loading
-[12.418][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583541765"
-   } ]
-}
-
-[12.420][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583541765/text)
-[12.420][FINER]:    Waiting for all views to stop loading...
-[12.421][FINER]:    Done waiting for all views to stop loading
-[12.499][FINER]:    Waiting for all views to stop loading...
-[12.499][FINER]:    Done waiting for all views to stop loading
-[12.499][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583541765/text) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "Sign in\nSign up!\nFind a nice place to work\nMap data \u00A92012 Google, Sanborn - Terms of Use\nReport ..."
-}
-
-[12.501][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with params {
-   "using": "xpath",
-   "value": "/html"
-}
-
-[12.501][FINER]:    Waiting for all views to stop loading...
-[12.502][FINER]:    Done waiting for all views to stop loading
-[12.511][FINER]:    Waiting for all views to stop loading...
-[12.512][FINER]:    Done waiting for all views to stop loading
-[12.512][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/elements) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": [ {
-      "ELEMENT": ":wdc:1354583541765"
-   } ]
-}
-
-[12.514][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583541765/text)
-[12.514][FINER]:    Waiting for all views to stop loading...
-[12.520][FINER]:    Done waiting for all views to stop loading
-[12.579][FINER]:    Waiting for all views to stop loading...
-[12.580][FINER]:    Done waiting for all views to stop loading
-[12.580][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/element/:wdc:1354583541765/text) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": "Sign in\nSign up!\nFind a nice place to work\nMap data \u00A92012 Google, Sanborn - Terms of Use\nReport ..."
-}
-
-[12.583][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/cookie)
-[12.583][FINER]:    Waiting for all views to stop loading...
-[12.586][FINER]:    Done waiting for all views to stop loading
-[12.602][FINER]:    Waiting for all views to stop loading...
-[12.603][FINER]:    Done waiting for all views to stop loading
-[12.603][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/cookie) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": {
-
-   }
-}
-
-[12.605][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with params {
-   "url": "about:blank"
-}
-
-[12.605][FINER]:    Waiting for all views to stop loading...
-[12.620][FINER]:    Done waiting for all views to stop loading
-[12.866][FINER]:    Waiting for all views to stop loading...
-[12.868][FINER]:    Done waiting for all views to stop loading
-[12.868][FINE]:     Command finished (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with response {
-   "sessionId": "4f50e9ae502205a2e7aa9d3b35b49d0e",
-   "status": 0,
-   "value": {
-
-   }
-}
-
-[12.872][FINE]:     Command received (/session/4f50e9ae502205a2e7aa9d3b35b49d0e/url) with params {
-   "url": "http://127.0.0.1:55787/faq"
-}
-
-[12.872][FINER]:    Waiting for all views to stop loading...
-[12.897][FINER]:    Done waiting for all views to stop loading
+[4.760][FINE]:      Command received (/session/55555f6801d6463b367917cfe2be4e54)
