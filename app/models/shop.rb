@@ -32,7 +32,7 @@ class Shop < ActiveRecord::Base
 
   def self.fetch_results_by_location(params)
     location = { latitude: params[:latitude], longitude: params[:longitude] }
-    box = GeoHelper.bounding_box(location,3)
+    box = GeoHelper.bounding_box(location,1.6)
     shops = Shop.where("latitude <= ? AND latitude >= ? AND longitude <= ? AND longitude >= ?",
                box[:north_latitude], box[:south_latitude], box[:east_longitude], box[:west_longitude])
   end
