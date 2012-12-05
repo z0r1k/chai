@@ -6,16 +6,14 @@ var Geolocation = {
   init: function() {
     $('#map-native-results').on('ajax:success',this.shopListFromDB);
     $('#find-shops').on('click', this.findRemoteResultsBySearch);
-
     this.currentPosition();
     this.sendCurrentPositionAndGetCoffeshopResults();
 
 
   },
 
-  doSomething: function() {
+  triggerClickEventOnMarker: function() {
     var index = $(this).data('id');
-    console.log(index);
     google.maps.event.trigger(markers[index], 'click');
   },
   // function that creates the map and displays it on our main page
@@ -31,7 +29,7 @@ var Geolocation = {
 
   shopListFromDB: function(event, data) {
     $('#map-native-results').html(data.html_content);
-    $('.shop-info-row').on('click', Geolocation.doSomething); //attach the event to the list row
+    $('.shop-info-row').on('click', Geolocation.triggerClickEventOnMarker); //attach the event to the list row
     // highlights table rows
     $(".shop-info-row").click(function() {
        $('.shop-info-row.highlight').removeClass('highlight');
@@ -62,35 +60,6 @@ var Geolocation = {
 
     }
   },
-
-// function that sends an Ajaxs request to our rails sever and waits for a reply
-// on successful reply triggers a 'success' which causes the displaying of our query items
-  // getGeoLocation: function() {
-  //   $('#find-shops button').attr("disabled", true);
-  //   $('#find-shops').fadeTo(500, 0.2);
-  //   $('body').addClass("loading");
-  //   navigator.geolocation.getCurrentPosition(function(position){
-  //     $.ajax({
-  //       type: 'post',
-  //       url: '/shops',
-  //       dataType: 'json',
-  //       data: {longitude: position.coords.longitude, latitude: position.coords.latitude},
-  //       success: function(data, status, xhr) {
-  //         $('#map-native-results').trigger('ajax:success', [data, status, xhr]);
-  //       },
-  //       error: function(xhr, status, error) {
-  //         $('#map-native-results').trigger('ajax:error', [xhr, status, error]);
-  //       },
-  //       complete: function(xhr, status) {
-  //         $('body').removeClass("loading");
-  //         $('#find-shops button').attr("disabled", false);
-  //         $('#find-shops').fadeTo(500, 1);
-  //       }
-  //     });
-  //   });
-  // },
-
-
 
 // function to get the users current position based on geolocation
 // also adds a pin to the google map with a hover text that reads 'You're here
