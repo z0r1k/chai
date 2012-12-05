@@ -3,21 +3,22 @@
 // longitude & latitude + some additional functions to help with
 // providing data and populating the main page and google map
 var Geolocation = {
-  init: function(currentPosition) {
-    // if (currentPosition === undefined) {
-    //   var currentPosition = this.currentPosition()
-    // }
-    // else
-
+  init: function() {
     $('#map-native-results').on('ajax:success',this.shopListFromDB);
     $('#find-shops').on('click', this.findRemoteResultsBySearch);
-    $('.shop-info-row').on('click', this.doSomething);
+
     this.currentPosition();
     this.sendCurrentPositionAndGetCoffeshopResults();
+
+
   },
 
   doSomething: function() {
-    alert(this)
+    //var something = $(this);
+    var shopId = $(this).data('id');
+    google.maps.event.trigger(markers[shopId], 'click');
+    // var target = $(this).attr("id");
+    //   alert(target);
   },
   // function that creates the map and displays it on our main page
   createMap: function(lngLat) {
@@ -32,7 +33,10 @@ var Geolocation = {
 
   shopListFromDB: function(event, data) {
     $('#map-native-results').html(data.html_content);
+    $('.shop-info-row').on('click', Geolocation.doSomething); //attach the event to the list row
     var infowindow = new google.maps.InfoWindow();
+
+    markers = new Array();
     for (var i = 0; i < data.businesses.length - 1; i++) {
       var myLatlng = new google.maps.LatLng(data.businesses[i].latitude, data.businesses[i].longitude);
       var marker = new google.maps.Marker({
@@ -49,6 +53,10 @@ var Geolocation = {
         infowindow.setContent(this.html);
         infowindow.open(map,this);
       });
+
+      markers.push(marker);
+
+
     }
   },
 

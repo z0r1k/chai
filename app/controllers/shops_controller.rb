@@ -14,7 +14,10 @@ class ShopsController < ApplicationController
       @markers_info << render_to_string(:partial => 'marker_info', :layout => false, :object => shop)
     end
 
-    render :json => { :html_content => render_to_string('list_results', :layout => false),
+    render :json => { :html_content => render_to_string(:partial => 'list_results',
+                                                        :layout => false,
+                                                        :locals => { :shops => @shops },
+                                                        ),
                       :businesses => @shops,
                       :html_marker_info => @markers_info }
   end
@@ -23,6 +26,7 @@ class ShopsController < ApplicationController
     @shop = Shop.find(params[:id])
     @visit = @shop.visits.build
   end
+
 
   def create
 
@@ -46,7 +50,7 @@ class ShopsController < ApplicationController
       @markers_info << render_to_string(:partial => 'marker_info', :layout => false, :object => shop)
     end
 
-    render :json => { :html_content => render_to_string('list_results', :layout => false),
+    render :json => { :html_content => render_to_string(:partial => 'list_results', :layout => false, :object => @shops),
                       :businesses => @shops,
                       :html_marker_info => @markers_info }
   end

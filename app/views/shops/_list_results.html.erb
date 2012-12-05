@@ -11,15 +11,14 @@
     </tr>
   </thead>
   <tbody>
-
-    <% @shops.map do |shop| %>
+    <% shops.map do |shop| %>
       <% shop.chai_score = 0 if shop.chai_score.nil? %>
     <% end %>
 
-    <% @shops.sort_by! { |shop| -1 * shop.chai_score } %>
+    <% shops.sort_by! { |shop| -1 * shop.chai_score } %>
 
-    <% @shops.each do |shop| %>
-      <tr class='shop-info-row' >
+    <% shops.each_with_index do |shop, index| %>
+      <tr class='shop-info-row', data-id="<%= index %>" >
         <td><%= link_to( shop.name, shop_path( shop ) ) %></td>
         <td><%= shop.chai_score.round( 1 ) %></td>
         <td><%= link_to "Rate", shop_path( shop ) %></td>
