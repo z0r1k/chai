@@ -3,7 +3,7 @@
 
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 
-<table class="table table-striped">
+<table class="table table-striped" id="shops-results">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name( :name ) %></th>
@@ -11,11 +11,11 @@
     </tr>
   </thead>
   <tbody>
-    <% shops.map do |shop| %>
-      <% shop.chai_score = 0 if shop.chai_score.nil? %>
-    <% end %>
+    <%# shops.map do |shop| %>
+      <%# shop.chai_score = 0 if shop.chai_score.nil? %>
+    <%# end %>
 
-    <% shops.sort_by! { |shop| -1 * shop.chai_score } %>
+    <%# shops.sort_by! { |shop| -1 * shop.chai_score } %>
 
     <% shops.each_with_index do |shop, index| %>
       <tr class='shop-info-row', data-id="<%= index %>" >

@@ -14,11 +14,9 @@ var Geolocation = {
   },
 
   doSomething: function() {
-    //var something = $(this);
-    var shopId = $(this).data('id');
-    google.maps.event.trigger(markers[shopId], 'click');
-    // var target = $(this).attr("id");
-    //   alert(target);
+    var index = $(this).data('id');
+    console.log(index);
+    google.maps.event.trigger(markers[index], 'click');
   },
   // function that creates the map and displays it on our main page
   createMap: function(lngLat) {
@@ -34,10 +32,15 @@ var Geolocation = {
   shopListFromDB: function(event, data) {
     $('#map-native-results').html(data.html_content);
     $('.shop-info-row').on('click', Geolocation.doSomething); //attach the event to the list row
+    // highlights table rows
+    $(".shop-info-row").click(function() {
+       $('.shop-info-row.highlight').removeClass('highlight');
+       $(this).addClass('highlight');
+    });
     var infowindow = new google.maps.InfoWindow();
 
     markers = new Array();
-    for (var i = 0; i < data.businesses.length - 1; i++) {
+    for (var i = 0; i < data.businesses.length; i++) {
       var myLatlng = new google.maps.LatLng(data.businesses[i].latitude, data.businesses[i].longitude);
       var marker = new google.maps.Marker({
         position: myLatlng,
