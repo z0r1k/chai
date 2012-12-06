@@ -22,11 +22,11 @@
         <%= f.hidden_field :shop_id, { :value => shop.id } %>
         <td class="rating-sliders", colspan="2">
           <%= f.label 'wifi:' %>
-          <%=f.range_field :wifi, :in => 1...11 %>
+          <%=f.range_field :wifi, :in => 1..5 %>
           <%= f.label 'power sockets:'%>
-          <%=f.range_field :power, :in => 1...11 %>
+          <%=f.range_field :power, :in => 1..5 %>
           <%= f.label 'atmosphere:'%>
-          <%=f.range_field :atmosphere, :in => 1...11 %>
+          <%=f.range_field :atmosphere, :in => 1..5 %>
         </td>
         <td>          
           <%= f.submit "Rate", :class => "btn btn-warning btn-large" %>
