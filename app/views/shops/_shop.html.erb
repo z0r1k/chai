@@ -1,25 +1,15 @@
 
-<div id="shop-card">
-  <h2><%= @shop.name %></h2>
+<div class='info-window' >
 
-  <ul id="shop_info_list">
-    <li><%= link_to "Yelp", @shop.yelp_url %></li>
-  </br>
-    <% if @shop.chai_score.nil? %>
-      <li>This shops Chai Score: 0</li>
-    <% else %>
-      <li>This shops Chai Score: <%= @shop.chai_score.round(1) %></li>
-    <% end -%>
-    <li>This shops yelp rating: <%= @shop.rating %></li>
-    </br>
-    Address:
-    <li><%= @shop.address %></li>
-    <li><%= @shop.city %>, <%= @shop.state_code %> <%= @shop.postal_code %></li>
+  <div id = 'info-window-address'>
+    <%= link_to shop.name, shop_path(shop.id) %></br>
 
-    <% unless @shop.phone.nil? %>
-      <li><%= @shop.phone %></li>
-    <% end -%>
-  </ul>
+    <%= shop.address %></br>
+    <%= shop.city %>, <%= shop.state_code %> <%= shop.postal_code %>
+  </div>
 
-  <div id="shop_image"><%= image_tag @shop.img_url %></div>
+  <div id = 'info-window-image'>
+    <%= image_tag shop.img_url %>
+  </div>
+
 </div>
