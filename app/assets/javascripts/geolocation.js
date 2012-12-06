@@ -8,9 +8,16 @@ var Geolocation = {
     $('#find-shops').on('click', this.findRemoteResultsBySearch);
     this.currentPosition();
     this.sendCurrentPositionAndGetCoffeshopResults();
-
-
+    $('#map-native-results').on('click', '.show_rating_row', this.showRatingRow);
   },
+
+
+  showRatingRow: function(event, data) {
+    $('.visit_rating').hide();
+    $next_row = $(this).parents('tr').next();
+    $next_row.show();
+  },
+
 
   triggerClickEventOnMarker: function() {
     var index = $(this).data('id');
@@ -57,7 +64,7 @@ var Geolocation = {
 
       markers.push(marker);
 
-
+      $('.visit_rating').hide();
     }
   },
 
@@ -158,3 +165,5 @@ var Geolocation = {
 $(document).ready(function(){
   Geolocation.init();
 });
+
+
