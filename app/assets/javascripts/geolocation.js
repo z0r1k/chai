@@ -112,7 +112,7 @@ var Geolocation = {
     navigator.geolocation.getCurrentPosition(function(position){
       $.ajax({
         type: 'post',
-        url: '/native_results',
+        url: '/shops',
         dataType: 'json',
         data: {longitude: position.coords.longitude, latitude: position.coords.latitude},
         success: function(data, status, xhr) {
