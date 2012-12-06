@@ -8,9 +8,23 @@ var Geolocation = {
     $('#find-shops').on('click', this.findRemoteResultsBySearch);
     this.currentPosition();
     this.sendCurrentPositionAndGetCoffeshopResults();
-
-
+    $('#map-native-results').on('click', '.show_rating_row', this.showRatingRow);
   },
+
+
+  showRatingRow: function() {
+    $next_row = $(this).parents('tr').next();
+    $button = $(this)
+    if($next_row.is(':visible') ){
+      $next_row.hide('fast');
+      $button.html("<button class='btn btn-small'><i class='icon-eye-open'></button>");
+    }else{
+      $('.visit_rating').hide('slow');
+      $next_row.show('slow');
+      $button.html("<button class='btn btn-small'><i class='icon-eye-close'></button>");
+    }
+  },
+
 
   triggerClickEventOnMarker: function() {
     var index = $(this).data('id');
@@ -57,7 +71,7 @@ var Geolocation = {
 
       markers.push(marker);
 
-
+      $('.visit_rating').hide();
     }
   },
 
@@ -158,3 +172,5 @@ var Geolocation = {
 $(document).ready(function(){
   Geolocation.init();
 });
+
+
