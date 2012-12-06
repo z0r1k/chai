@@ -13,12 +13,18 @@
  */
 
 @font-face {
-  font-family: "Pacifico";
-  src: url(/assets/Pacifico-webfont.eot);
-  src: local("Pacifico Heavy"), local("Pacifico-Heavy"), url(/assets/Pacifico-webfont.eot) format("embedded-opentype"), url(/assets/Pacifico-webfont.woff) format("woff"), url(/assets/Pacifico-webfont.ttf) format("truetype"), url(/assets/Pacifico-webfont.svg) format("svg");
+  font-family: "CartoGothicStd-Book";
+  src: url(/assets/CartoGothicStd-Book-webfont.eot);
+  src: local("CartoGothicStd-Book"), 
+       local("CartoGothicStd-Book"), 
+       url(/assets/CartoGothicStd-Book-webfont.eot) format("embedded-opentype"), 
+       url(/assets/CartoGothicStd-Book-webfont.woff) format("woff"), 
+       url(/assets/CartoGothicStd-Book-webfont.ttf) format("truetype"), 
+       url(/assets/CartoGothicStd-Book-webfont.svg) format("svg");
   font-weight: 900;
   font-style: normal;
 }
+
 
 
 /*************************************/
@@ -42,7 +48,7 @@
   border:2px solid #eeb44f;
   width: 500px;
   padding:3px 20px;
-  font-family: 'Pacifico', sans-serif;
+  font-family: 'CartoGothicStd-Book', sans-serif;
   width: 500px ;
   margin-left: auto ;
   margin-right: auto ;
@@ -72,24 +78,42 @@
 /*************************************/
 /* GENERAL STYLING                   */
 /*************************************/
+
+tr.rating-sliders td input.btn-block{
+  margin-top: 20%;
+}
+
+
+
+#distant-search-field{
+  font-family: "CartoGothicStd-Book";
+}
+
+#distant-search-field-text{
+  font-family: "CartoGothicStd-Book";
+}
+
+.page-wrapper{
+  margin-top: 20px;
+  max-width: 900px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+.closing-border{
+  border: solid 2px;
+}
+
 h1 {
-  font-family: 'Pacifico', sans-serif;
+  
 }
 
 
 h2 {
-  font-family: Arial, sans-serif;
-  font-color: red;
+
 }
 
 
-body {
-  font-family: Arial, sans-serif;
-}
-
-p{
-  font-family: Arial, sans-serif;
-}
 
 .info-window {
   width: 275px;
@@ -104,18 +128,24 @@ p{
   float:right;
 }
 
+#map-native-results{
+  font-family: "CartoGothicStd-Book";
+}
+
+#map-native-results a{
+  font-family: "CartoGothicStd-Book";
+  text-transform: uppercase;
+}
 
 #map_canvas {
   height: 350px;
   width: 100%;
 }
 
-@media screen {
-  html, body {
-    height: auto;
-  }
-}
 
+p{
+  font-family: "CartoGothicStd-Book";
+}
 
 #logo {
     display:inline;
@@ -128,9 +158,6 @@ p{
 #logo a img{
   background-image:'chai_3.gif' }
 
-.signed_in_blue_links{
-  padding: 34px;
-}
 
 #header_action_box {
     overflow: hidden;
@@ -218,7 +245,6 @@ body.loading .vegeta {
 }
 
 #distant-search-field {
-  position:relative;
   border: 1px solid red;
   -moz-box-shadow:inset 1px 1px 3px -6px #fceaca;
    -webkit-box-shadow:inset 1px 1px 3px -6px #fceaca;
@@ -245,8 +271,8 @@ body.loading .vegeta {
    margin-bottom: 13px;
    height:50px;
    width:100%;
-   font-family: Arial, sans-serif;
 }
+
 #distant-search-field-text {
   display:inline;
   width:33%;
@@ -353,15 +379,38 @@ body.loading .vegeta {
   background-color:#ffce79;
 }
 
-.model-body tr:hover{
-  background-color: black;
-}
 
 table tbody tr td label{
   font-size: 14px;
 }
 
-table tbody tr td input{
-  width: auto;
-  /*background: black;*/
+.table thead tr th{
+  text-align: center;
+  text-transform: uppercase;
+  font-style: bold;
+
 }
+
+
+.table tbody tr td{
+  text-align: center;
+}
+
+table tbody tr td input{
+  width: 95%;
+}
+
+table {
+  table-layout: fixed;
+}
+
+
+.modal-body {
+  overflow-y: auto;
+  max-height: 300px;
+  padding: 0px !important;
+  /*margin: 0 15px 0 -15px;*/
+}
+
+
+

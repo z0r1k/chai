@@ -12,10 +12,17 @@ var Geolocation = {
   },
 
 
-  showRatingRow: function(event, data) {
-    $('.visit_rating').hide();
+  showRatingRow: function() {
     $next_row = $(this).parents('tr').next();
-    $next_row.show();
+    $button = $(this)
+    if($next_row.is(':visible') ){
+      $next_row.hide('fast');
+      $button.html("<button class='btn btn-small'><i class='icon-eye-open'></button>");
+    }else{
+      $('.visit_rating').hide('slow');
+      $next_row.show('slow');
+      $button.html("<button class='btn btn-small'><i class='icon-eye-close'></button>");
+    }
   },
 
 
