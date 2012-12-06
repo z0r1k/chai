@@ -4,10 +4,13 @@
 // providing data and populating the main page and google map
 
 function setLatLong(lat, lng) {
+  console.log("This should happen first.")
+
   var locationString = document.location.toString();
   var newString = '?' + 'latitude=' + lat + '&' + 'longitude=' + lng;
   if (locationString.indexOf(newString) == -1) {
-    document.location.replace(newString);
+    console.log('pushing state');
+    history.pushState({}, 'apples', newString);
   }
 }
 
@@ -24,20 +27,24 @@ function getLatLng() {
 
 var Geolocation = {
   init: function() {
+    var that = this;
+
     $('#map-native-results').on('ajax:success',this.shopListFromDB);
     $('#searchRemoteResults').on('click', this.findRemoteResultsBySearch);
-    this.setLatLngFromCurrentPosition();
-
-    var latLng = getLatLng();
-    var myLatlng = new google.maps.LatLng(latLng.latitude, latLng.longitude);
-      var marker = new google.maps.Marker({
-        position: myLatlng,
-        map: Geolocation.createMap(myLatlng),
-        animation: google.maps.Animation.DROP,
-        icon: 'https://chart.googleapis.com/chart?chst=d_map_xpin_icon&chld=pin_star|home|00FFFF|FF0000',
-        title: "You're here", //name
-      });
-    this.sendPositionAndGetRemoteResults();
+    console.log('alkjsdkahsd');
+    this.setLatLngFromCurrentPosition(function() {
+      console.log("This should happen second.")
+      var latLng = getLatLng();
+      var myLatlng = new google.maps.LatLng(latLng.latitude, latLng.longitude);
+        var marker = new google.maps.Marker({
+          position: myLatlng,
+          map: Geolocation.createMap(myLatlng),
+          animation: google.maps.Animation.DROP,
+          icon: 'https://chart.googleapis.com/chart?chst=d_map_xpin_icon&chld=pin_star|home|00FFFF|FF0000',
+          title: "You're here", //name
+        });
+      that.sendPositionAndGetRemoteResults();
+    });
   },
   triggerClickEventOnMarker: function() {
     var index = $(this).data('id');
@@ -69,7 +76,7 @@ var Geolocation = {
         position: myLatlng,
         map: map,
         icon: "http://chart.apis.google.com/chart?chst=d_map_pin_icon&chld=cafe%7C996600",
-        title: data.businesses[i].name,
+        //title: data.businesses[i].name,
         html: data.html_marker_info[i], // taking an element from an array of rendered HTML - done in the create function in the shop controller
       });
 
@@ -81,18 +88,20 @@ var Geolocation = {
       });
 
       markers.push(marker);
-
-
     }
   },
 
 // function to get the users current position based on geolocation
 // also adds a pin to the google map with a hover text that reads 'You're here
-  setLatLngFromCurrentPosition: function()  {
-    console.log(hasCoordinates());
-    if(hasCoordinates()) { return; }
+  setLatLngFromCurrentPosition: function(callback)  {
+    if(hasCoordinates()) {
+      callback();
+      return;
+    }
+
     navigator.geolocation.getCurrentPosition(function(position){
-       setLatLong(position.coords.latitude, position.coords.longitude);
+      setLatLong(position.coords.latitude, position.coords.longitude);
+      callback();
     });
   },
   sendPositionAndGetRemoteResults: function() {
@@ -172,6 +181,7 @@ function getParameterByName(name) {
   name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
   var regexS = "[\\?&]" + name + "=([^&#]*)";
   var regex = new RegExp(regexS);
+  console.log(window.location.search);
   var results = regex.exec(window.location.search);
   if (results == null) {
     return "";
@@ -182,5 +192,6 @@ function getParameterByName(name) {
 
 // document ready wrapper for our Geolocation object
 $(document).ready(function(){
+  console.log('initititit');
   Geolocation.init();
 });
