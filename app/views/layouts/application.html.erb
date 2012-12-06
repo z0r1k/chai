@@ -62,10 +62,10 @@
         <%= yield %>
         <div id="bottom_border"></div>
         <nav>
-          <%= link_to_unless_current "Home", root_path%> |
-          <%= link_to_unless_current "About", about_path%> |
-          <%= link_to_unless_current "Contact", contact_path%> |
-          <%= link_to_unless_current "FAQ", faq_path%> |
+          <%= link_to_unless_current "Home", root_path, class: 'nav-link'%> |
+          <%= link_to_unless_current "About", about_path, class: 'nav-link'%> |
+          <%= link_to_unless_current "Contact", contact_path, class: 'nav-link'%> |
+          <%= link_to_unless_current "FAQ", faq_path, class: 'nav-link'%> |
         </nav>
         <%#= debug params %>
         <footer>

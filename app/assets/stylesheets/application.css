@@ -15,11 +15,11 @@
 @font-face {
   font-family: "CartoGothicStd-Book";
   src: url(/assets/CartoGothicStd-Book-webfont.eot);
-  src: local("CartoGothicStd-Book"), 
-       local("CartoGothicStd-Book"), 
-       url(/assets/CartoGothicStd-Book-webfont.eot) format("embedded-opentype"), 
-       url(/assets/CartoGothicStd-Book-webfont.woff) format("woff"), 
-       url(/assets/CartoGothicStd-Book-webfont.ttf) format("truetype"), 
+  src: local("CartoGothicStd-Book"),
+       local("CartoGothicStd-Book"),
+       url(/assets/CartoGothicStd-Book-webfont.eot) format("embedded-opentype"),
+       url(/assets/CartoGothicStd-Book-webfont.woff) format("woff"),
+       url(/assets/CartoGothicStd-Book-webfont.ttf) format("truetype"),
        url(/assets/CartoGothicStd-Book-webfont.svg) format("svg");
   font-weight: 900;
   font-style: normal;
@@ -256,8 +256,11 @@ body.loading .vegeta {
     display: block;
 }
 
+/*************************/
+/* Distant Search Field*/
+/*************************/
+
 #distant-search-field {
-  border: 1px solid red;
   -moz-box-shadow:inset 1px 1px 3px -6px #fceaca;
    -webkit-box-shadow:inset 1px 1px 3px -6px #fceaca;
    box-shadow:inset 1px 1px 3px -6px #fceaca;
@@ -270,38 +273,38 @@ body.loading .vegeta {
    border-radius:8px;
    border:2px solid #eeb44f;
    color:#ffffff;
-   font-family:arial;
-   font-size:35px;
+   font-family: "CartoGothicStd-Book";
    font-weight:bold;
    text-decoration:none;
    text-shadow:2px 2px 2px #ce8e28;
    position: relative;
-   top: 0px;
    display:inline-block;
    float:left;
-   margin-top: 10px;
+   margin-top: 2px;
    margin-bottom: 13px;
    height:50px;
    width:100%;
-   padding-top:16px;
+   padding-top: 10px;
+   /*padding-right: 3px;*/
 }
 
-#distant-search-field-text {
-  display:inline;
-  width:33%;
-  margin-left: 50px;
-  margin-right:15px;
-}
-#distant-search-field input{
-   display:inline;
-   line-height:30px;
-   width:275px;
-   margin-left:7px;
-   font-size:24px;
+#distant-search-field-inner{
+  vertical-align: middle;
 }
 
-#distant-search-field button{
-    -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
+#distant-search-field #address{
+  -moz-border-radius:8px;
+  -webkit-border-radius:8px;
+  border-radius:8px;
+  padding-left: 10px;
+  font-size: 1em;
+  width:65%;
+  margin-right: 1%;
+  vertical-align: middle;
+}
+
+#distant-search-field #searchRemoteResults{
+   -moz-box-shadow:inset 0px 1px 0px 0px #ffffff;
   -webkit-box-shadow:inset 0px 1px 0px 0px #ffffff;
   box-shadow:inset 0px 1px 0px 0px #ffffff;
   background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #dfdfdf) );
@@ -315,14 +318,27 @@ body.loading .vegeta {
   display:inline-block;
   color:#777777;
   font-family:Arial;
-  font-size:16px;
+  font-size:1.2em;
   font-weight:bold;
-  padding:6px 7px;
+  padding:4px 3px;
   text-decoration:none;
   text-shadow:1px 1px 0px #ffffff;
-  margin-top: -1px;
-  margin-left:16px;
+  margin-top: 3px;/*float: right;*/
+}
 
+#distant-search-field-text {
+  display:inline;
+  /*margin-left: 50px;*/
+  position: relative;
+  font-family: "CartoGothicStd-Book"
+}
+#distant-search-field input{
+   display:inline;
+   line-height:30px;
+   width:275px;
+   margin-left:7px;
+   font-size:24px;
+   position: relative;
 }
 
 #distant-search-field button:hover {
@@ -352,7 +368,7 @@ body.loading .vegeta {
   padding:6px 7px;
   text-decoration:none;
   text-shadow:1px 1px 0px #ffffff;
-  margin-top: 7px;
+  margin-top: 10px;
 }
 
 .signup_button:hover {
@@ -418,7 +434,7 @@ body.loading .vegeta {
 }
 
 #bottom_border{
-  margin-top: 10px; 
+  margin-top: 10px;
   margin-bottom: 5px;
   border-top: solid #2A6A9E 3px;
 }
