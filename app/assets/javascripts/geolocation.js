@@ -131,20 +131,19 @@ var Geolocation = {
       $.ajax({
         type: 'post',
         url: '/shops',
-//=======
   // sendPositionAndGetNativeResults: function() {
   //   navigator.geolocation.getCurrentPosition(function(position){
   //     $.ajax({
   //       type: 'post',
   //       url: '/native_results',
-//>>>>>>> master
+
         dataType: 'json',
         data: {longitude: position.coords.longitude, latitude: position.coords.latitude},
         success: function(data, status, xhr) {
           $('#map-native-results').trigger('ajax:success', [data, status, xhr]);
         },
         error: function(xhr, status, error) {
-//<<<<<<< HEAD
+
           $('#map-native-results').trigger('ajax:error', [xhr, status, error]); 
         },
         complete: function(xhr, status) {
