@@ -10,7 +10,7 @@ function setLatLong(lat, lng) {
   var newString = '?' + 'latitude=' + lat + '&' + 'longitude=' + lng;
   if (locationString.indexOf(newString) == -1) {
     console.log('pushing state');
-    history.pushState({}, 'apples', newString);
+    history.pushState({}, '', newString);
   }
 }
 
@@ -28,11 +28,18 @@ function getLatLng() {
 var Geolocation = {
   init: function() {
     var that = this;
+    $(window).bind('popstate', function() {
+      console.log('pop pop')
+      var myLatlng = new google.maps.LatLng(getLatLng().latitude, getLatLng().longitude);
+      map.setCenter(myLatlng);
+      Geolocation.sendPositionAndGetRemoteResults();
+
+    });
 
     $('#map-native-results').on('ajax:success',this.shopListFromDB);
     $('#searchRemoteResults').on('click', this.findRemoteResultsBySearch);
     console.log('alkjsdkahsd');
-    this.setLatLngFromCurrentPosition(function() {
+    Geolocation.setLatLngFromCurrentPosition(function() {
       console.log("This should happen second.")
       var latLng = getLatLng();
       var myLatlng = new google.maps.LatLng(latLng.latitude, latLng.longitude);
@@ -49,6 +56,10 @@ var Geolocation = {
   triggerClickEventOnMarker: function() {
     var index = $(this).data('id');
     google.maps.event.trigger(markers[index], 'click');
+  },
+
+  clearStateHistory: function() {
+    history.pushState({}, '', '');
   },
   createMap: function(lngLat) {
     var mapOptions = {
@@ -103,6 +114,7 @@ var Geolocation = {
       setLatLong(position.coords.latitude, position.coords.longitude);
       callback();
     });
+
   },
   sendPositionAndGetRemoteResults: function() {
     var coords = getLatLng();
@@ -193,5 +205,5 @@ function getParameterByName(name) {
 // document ready wrapper for our Geolocation object
 $(document).ready(function(){
   console.log('initititit');
-  Geolocation.init();
+
 });
