@@ -290,6 +290,9 @@ body.loading .vegeta {
 
 #distant-search-field-inner{
   vertical-align: middle;
+  margin: 0px auto;
+  text-align: center;
+
 }
 
 #distant-search-field #address{
