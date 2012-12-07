@@ -31,7 +31,7 @@ You can rate every category in a range between 1-5.
 Once you're done, your score will be added to the shops overall score for the whole world to see.
 
 
-Wi-Chai can be used here: [Wi-Chai](www.wi-chai.com)
+Wi-Chai can be used here: www.wi-chai.com
 
 Enjoy!
 The Wi-Chai Team
