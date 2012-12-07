@@ -18,16 +18,17 @@ Atmosphere | Wifi | Power
 
 Based on your current location or on a user defined location we'll find coffee-shops around you.
 
-These will be sorted by their wifi quality, their power socket amount and finally their overall working environment (is it noisy? is there enough room, etc).
+These will be sorted by their wifi quality, their amount of power socket and finally their overall working environment (is it noisy? is there enough room, etc).
 
-The overall score is represented in what we call Chai-Score - an aggregated overall score based on the individual categories.
+The overall score is represented in what we call Chai-Score - an aggregated score based on the individual categories.
 
 
-# This coffee-shops was great / horrible how can I let others know about this?
+# This coffee-shop was great / horrible how can I let others know about this?
 
 Easy peasy! Rate the shop!
+
 You can rate every category in a range between 1-5.
-Once you're done, your score will be added to the shops overall score for everyone else to see.
+Once you're done, your score will be added to the shops overall score for the whole world to see.
 
 
 Wi-Chai can be used here: [Wi-Chai](www.wi-chai.com)
