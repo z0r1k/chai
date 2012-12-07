@@ -2,7 +2,7 @@
 
 ### Ever encountered the problem of wanting to work from a coffee-shop on a rainy sunday?
 
-Remember the experience you had, when you just stumbled in the first one you saw, all soaking wet:
+Remember the experience you had, when you just stumbled in the first one you saw, all soaking wet?
 Loud music, bad coffee, your laptops battery is starving but there is no free plug and worst of all the wifi tubes are clogged!
 
 If you nodded in agreement, don't you worry no more,
