@@ -36,4 +36,8 @@ Wi-Chai can be used here: www.wi-chai.com
 Enjoy!
 The Wi-Chai Team
 
+FEATURES NEEDED:(please add to the list)
+- the ability to drag and drop marker for new center of search. 
+- the ability to drag the map and see more results. 
+
 
