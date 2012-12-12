@@ -39,5 +39,8 @@ The Wi-Chai Team
 FEATURES NEEDED:(please add to the list)
 - the ability to drag and drop marker for new center of search. 
 - the ability to drag the map and see more results. 
+- Add Seating to the rating of a shop.
 
-
+BUGS to Fix:
+- After rating a shop in a remote search, the map centers around the location of the user. It should stay centered on the searched area
+- When the address field is empty and you click the search button an error pops up
