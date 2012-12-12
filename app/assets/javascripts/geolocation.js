@@ -196,8 +196,8 @@ var Geolocation = {
             position: results[0].geometry.location,
             icon: 'https://chart.googleapis.com/chart?chst=d_map_xpin_icon&chld=pin_star|home|00FFFF|FF0000',
         });
-        var latitude = results[0].geometry.location.$a;
-        var longitude = results[0].geometry.location.ab;
+        var latitude = results[0].geometry.location.Za;
+        var longitude = results[0].geometry.location.$a;
         setLatLong(latitude, longitude);
         Geolocation.sendPositionAndGetRemoteResults()
       } else {
