@@ -38,10 +38,11 @@ The Wi-Chai Team
 
 FEATURES NEEDED:(please add to the list)
 - the ability to drag and drop marker for new center of search. 
-- the ability to drag the map and see more results. 
+- the ability to drag the map and see more results.
 - Add Seating to the rating of a shop.
 - If the data in the DB is old, get more recent data from external sources (data could have changed, more shops added, etc.)
 
 BUGS to Fix:
+- Remove the History push state to accomodate other/older browers (use something else)
 - After rating a shop in a remote search, the map centers around the location of the user. It should stay centered on the searched area
 - When the address field is empty and you click the search button an error pops up
