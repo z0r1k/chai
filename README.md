@@ -46,3 +46,5 @@ BUGS to Fix:
 - Remove the History push state to accomodate other/older browers (use something else)
 - After rating a shop in a remote search, the map centers around the location of the user. It should stay centered on the searched area
 - When the address field is empty and you click the search button an error pops up
+- Where did our coffee animation go when we are looking for coffee shops?
+- When no shops are returned (due to whatever reason - error/reached queries limit) the old shops from the previous location are shown instead of an empty list
