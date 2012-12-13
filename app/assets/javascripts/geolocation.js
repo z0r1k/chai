@@ -138,8 +138,8 @@ var Geolocation = {
   sendPositionAndGetRemoteResults: function() {
     var coords = getLatLng();
     $.ajax({
-        type: 'post',
-        url: '/native_results',
+        type: 'get',
+        url: '/shops',
         dataType: 'json',
         data: coords,
         success: function(data, status, xhr) {
@@ -164,9 +164,10 @@ var Geolocation = {
     //$('#find-shops').fadeTo(500, 0.2);
     $('body').addClass("loading");
     navigator.geolocation.getCurrentPosition(function(position){
+      debugger
       $.ajax({
-        type: 'post',
-        url: '/native_results',
+        type: 'get',
+        url: '/shops',
         dataType: 'json',
         data: {longitude: position.coords.longitude, latitude: position.coords.latitude},
         success: function(data, status, xhr) {
@@ -223,7 +224,7 @@ function getParameterByName(name) {
 
 // document ready wrapper for our Geolocation object
 $(document).ready(function(){
-
+  //Geolocation.init();
 });
 
 

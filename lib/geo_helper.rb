@@ -14,4 +14,8 @@ module GeoHelper
     box = {north_latitude: latitude_max  ,south_latitude: latitude_min, east_longitude: longitude_max, west_longitude: longitude_min }
   end
 
+	def self.get_latest_location()
+		location = { latitude: 37.7750, longitude: -122.4183 }
+	end
+
 end

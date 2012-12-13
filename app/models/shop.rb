@@ -26,23 +26,32 @@ class Shop < ActiveRecord::Base
     shop
   end
 
-
-  def self.fetch_results_by_location(params)
-    location = { latitude: params[:latitude], longitude: params[:longitude] }
-    box = GeoHelper.bounding_box(location,1)
-    shops = Shop.where("latitude <= ? AND latitude >= ? AND longitude <= ? AND longitude >= ?",
-               box[:north_latitude], box[:south_latitude], box[:east_longitude], box[:west_longitude])
-  end
-
   def self.fetch_by_location(latitude, longitude)
-    shops = find_by_location(latitude, longitude)
-    shops = find_yelp_shops unless shops.length > 5
+    radius = 1 #kilometers
+    shops = find_by_location( { latitude: latitude, longitude: longitude }, radius)
+    shops = find_yelp_shops( latitude, longitude, radius ) unless shops.length > 5
     # find records by lat & long
     # search yelp if there are less than 5 results
+    shops
   end
 
-  def self.find_yelp_shops(latitude, longitude)
-    shops = YelpHelper.find(latitude, longitude)
+  def self.find_by_location(location, radius)
+    #location = { latitude: params[:latitude], longitude: params[:longitude] }
+    box = GeoHelper.bounding_box(location, radius)
+    shops = self.where("latitude <= ? AND latitude >= ? AND longitude <= ? AND longitude >= ?",
+               box[:north_latitude], box[:south_latitude], box[:east_longitude], box[:west_longitude])
+    shops
   end
+
+  def self.find_yelp_shops(latitude, longitude, radius)
+    results = YelpHelper.find(latitude, longitude)
+    results[:businesses].each  do |shop|
+      self.update_or_create_by_name_and_latitude_and_longitude(shop.except(:distance, :review_count))
+    end
+    shops = find_by_location( { latitude: latitude, longitude: longitude }, radius )
+    shops
+  end
+
 end
 
+   
