@@ -29,8 +29,6 @@ development:
   encoding: utf8
   database: chai_development
   host: localhost
-  # username: admin
-  # password: mvclover
 
 test:
   adapter: postgresql
