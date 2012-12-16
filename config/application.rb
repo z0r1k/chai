@@ -15,6 +15,11 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+SMTP_USERNAME = "username"
+SMTP_PASSWORD = "password"
+SMTP_HOST = "smtp.gmail.com"
+SMTP_DOMAIN = "domain"
+
 module Chai
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
@@ -72,17 +77,17 @@ module Chai
     # config.assets.initialize_on_precompile = false
 
     config.action_mailer.smtp_settings = {
-      :address              => "smtp.gmail.com",
+      :address              => SMTP_HOST,
       :port                 => 587,
-      :domain               => "webdevlasse.mygbiz.com",
-      :user_name            => "webdevlasse@webdevlasse.mygbiz.com",
-      :password             => "Christ01",
+      :domain               => SMTP_DOMAIN,
+      :user_name            => SMTP_USERNAME,
+      :password             => SMTP_PASSWORD,
       :authentication       => :plain,
       :enable_starttls_auto => true
     }
 
     config.action_mailer.default_url_options = {
-      :host => "webdevlasse.mygbiz.com"
+      :host => SMTP_DOMAIN
     }
   end
 end
